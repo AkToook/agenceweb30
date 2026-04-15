@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/Users/Asus%20Tuf%20F15/Downloads/agence-web_1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEBcraft — Agence Web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./WEBcraft — Agence Web_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F;--bg2:#0E1020;--bg3:#141628;
+  --white:#F0EEFF;--muted:#6B7280;
+  --violet:#7C3AED;--vb:#A855F7;
+  --cyan:#06B6D4;--cb:#22D3EE;
+  --lime:#84CC16;--pink:#EC4899;--amber:#F59E0B;
+  --gold:#D4A853;--red:#EF4444;
+  --border:rgba(168,85,247,.15);
+  --font:'Bricolage Grotesque',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden}
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--vb)}
+
+/* PAGES */
+.page{display:none;animation:fadeIn .3s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* UTILS */
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--violet),var(--vb));color:#fff;font-family:var(--font);font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:15px 30px;border-radius:50px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;box-shadow:0 0 30px rgba(124,58,237,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(124,58,237,.6)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:14px 28px;border-radius:50px;text-decoration:none;border:1px solid rgba(240,238,255,.2);transition:all .2s;cursor:pointer}
+.btn-g:hover{border-color:var(--cb);color:var(--cb);box-shadow:0 0 20px rgba(34,211,238,.15)}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cb);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.25);padding:6px 14px;border-radius:50px;margin-bottom:24px}
+.badge::before{content:'';width:6px;height:6px;background:var(--cb);border-radius:50%;animation:bl 2s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.grad{background:linear-gradient(135deg,var(--vb) 0%,var(--cb) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.soft{color:rgba(240,238,255,.2)}
+.sec-hd{text-align:center;margin-bottom:72px}
+.sec-hd h2{font-size:clamp(36px,5vw,58px);font-weight:800;letter-spacing:-2px;line-height:.95;margin-bottom:16px}
+.sec-hd p{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(7,8,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 28px}
+.logo{font-size:22px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-1px;cursor:pointer}
+.logo em{font-style:normal;background:linear-gradient(135deg,var(--vb),var(--cb));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a,.nav-links span{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;cursor:pointer;position:relative}
+.nav-links a:hover,.nav-links span:hover{color:var(--white)}
+.nav-dd{position:relative}
+.nav-dd:hover .dd-menu{display:block}
+.dd-menu{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:8px;min-width:220px;z-index:200}
+.dd-item{display:block;padding:10px 14px;border-radius:8px;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.dd-item:hover{background:rgba(168,85,247,.1);color:var(--white)}
+.dd-sect{padding:6px 14px 4px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(168,85,247,.6);margin-top:4px}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* BREADCRUMB */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:32px;flex-wrap:wrap}
+.breadcrumb span{cursor:pointer;transition:color .2s}
+.breadcrumb span:hover{color:var(--cb)}
+.breadcrumb .sep{color:rgba(168,85,247,.4)}
+.breadcrumb .current{color:var(--white)}
+
+/* VERTICAL HERO */
+.vh{min-height:80vh;display:flex;align-items:center;padding:140px 0 80px;position:relative;overflow:hidden}
+.vh-orb1{position:absolute;top:-20%;left:-10%;width:600px;height:600px;pointer-events:none}
+.vh-orb2{position:absolute;bottom:-20%;right:-5%;width:500px;height:500px;pointer-events:none}
+.vh h1{font-size:clamp(44px,6vw,80px);font-weight:800;line-height:.92;letter-spacing:-2.5px;color:var(--white);margin-bottom:24px}
+.vh-sub{font-size:18px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:40px}
+.vh-sub strong{color:var(--white);font-weight:600}
+.vh-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.vh-stats{display:flex;gap:44px;flex-wrap:wrap;padding-top:36px;border-top:1px solid var(--border)}
+.vs-num{font-size:36px;font-weight:800;letter-spacing:-1.5px;line-height:1;margin-bottom:4px}
+.vs-lbl{font-size:12px;color:var(--muted);letter-spacing:.5px}
+
+/* PROBLEMS SECTION */
+.prob-sec{padding:80px 0;background:var(--bg2)}
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+@media(max-width:768px){.prob-grid{grid-template-columns:1fr}}
+.prob-card{padding:28px 24px;border:1px solid rgba(239,68,68,.2);border-radius:14px;background:rgba(239,68,68,.04)}
+.prob-icon{font-size:28px;margin-bottom:14px}
+.prob-card h4{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px}
+.prob-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* SUBCAT GRID */
+.subcat-sec{padding:100px 0}
+.subcat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.subcat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.subcat-grid{grid-template-columns:1fr}}
+.subcat-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;background:var(--bg2);cursor:pointer}
+.subcat-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:rgba(168,85,247,.4)}
+.sc-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;overflow:hidden}
+.sc-body{padding:20px}
+.sc-title{font-size:18px;font-weight:800;color:var(--white);margin-bottom:6px;letter-spacing:-.3px}
+.sc-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.sc-link{font-size:12px;font-weight:700;color:var(--vb);letter-spacing:.5px;text-transform:uppercase}
+
+/* RESULTS */
+.results-sec{padding:80px 0;background:var(--bg3)}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr}}
+.result-card{padding:28px 20px;text-align:center;background:var(--bg2);border-radius:14px;border:1px solid var(--border)}
+.result-num{font-size:44px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:6px}
+.result-lbl{font-size:12px;color:var(--muted);letter-spacing:.5px}
+
+/* OFFERS */
+.offers-sec{padding:100px 0}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.offers-grid{grid-template-columns:1fr}}
+.oc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:32px 26px;display:flex;flex-direction:column;position:relative;transition:all .3s}
+.oc:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px)}
+.oc.feat{background:linear-gradient(160deg,#160D2E,#0E1A2E);border:1px solid rgba(168,85,247,.5)}
+.oc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.oc-type{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;color:var(--vb)}
+.oc h3{font-size:24px;font-weight:800;color:var(--white);letter-spacing:-.5px;margin-bottom:6px}
+.oc-price{font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;background:linear-gradient(135deg,var(--vb),var(--cb));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.oc-price small{font-size:13px;font-weight:400;-webkit-text-fill-color:var(--muted);background:none}
+.oc-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.oc-buls{list-style:none;flex:1;margin-bottom:28px;display:flex;flex-direction:column;gap:8px}
+.oc-bul{font-size:13px;color:rgba(240,238,255,.65);display:flex;gap:8px;align-items:flex-start}
+.oc-bul::before{content:'✓';width:16px;height:16px;border-radius:4px;background:rgba(168,85,247,.2);color:var(--vb);font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+/* TESTIMONIALS */
+.testi-sec{padding:80px 0;background:var(--bg2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+@media(max-width:768px){.testi-grid{grid-template-columns:1fr}}
+.tcard{padding:28px 24px;border:1px solid var(--border);border-radius:16px;background:var(--bg3)}
+.tcard-stars{color:var(--amber);font-size:14px;margin-bottom:14px}
+.tcard-text{font-size:14px;color:rgba(240,238,255,.8);line-height:1.7;font-style:italic;margin-bottom:18px}
+.tcard-auth{font-size:12px;font-weight:700;color:var(--muted)}
+
+/* FAQ */
+.faq-sec{padding:100px 0}
+.flist{max-width:740px;margin:56px auto 0;display:flex;flex-direction:column;gap:2px}
+.fi{border-bottom:1px solid var(--border);overflow:hidden}
+.fq{width:100%;background:none;border:none;color:var(--white);font-family:var(--font);font-size:16px;font-weight:600;text-align:left;padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;letter-spacing:-.3px;transition:color .2s}
+.fq:hover{color:var(--vb)}
+.farr{width:26px;height:26px;background:var(--bg3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;transition:transform .3s,background .2s;color:var(--muted);border:1px solid var(--border)}
+.fi.open .farr{transform:rotate(45deg);background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
+.fi.open .fa{max-height:200px;padding-bottom:22px}
+.fa p{font-size:14px;color:var(--muted);line-height:1.7}
+.fa p strong{color:var(--white);font-weight:600}
+
+/* CTA FINAL */
+.cta-fin{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(124,58,237,.15) 0%,rgba(6,182,212,.08) 50%,transparent 70%);pointer-events:none}
+.cta-fin h2{font-size:clamp(38px,5.5vw,68px);font-weight:800;letter-spacing:-2.5px;line-height:.92;margin-bottom:22px;position:relative;z-index:1}
+.cta-fin p{font-size:17px;color:var(--muted);max-width:440px;margin:0 auto 44px;line-height:1.7;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:28px}
+.cta-email{font-size:14px;color:var(--muted);position:relative;z-index:1}
+.cta-email a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(240,238,255,.2);transition:color .2s,border-color .2s}
+.cta-email a:hover{color:var(--cb);border-color:var(--cb)}
+
+/* SUBCATEGORY PAGE */
+.subpage-hero{min-height:75vh;display:flex;align-items:center;padding:140px 0 70px;position:relative;overflow:hidden}
+.sp-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:20px}
+.sp-h1{font-size:clamp(40px,5.5vw,72px);font-weight:800;line-height:.92;letter-spacing:-2.5px;color:var(--white);margin-bottom:20px}
+.sp-sub{font-size:18px;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:36px}
+.sp-sub strong{color:var(--white);font-weight:600}
+
+/* FEATURE GRID */
+.feat-sec{padding:80px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+@media(max-width:768px){.feat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.feat-grid{grid-template-columns:1fr}}
+.fcard{padding:26px 22px;border:1px solid var(--border);border-radius:14px;background:var(--bg3);transition:all .3s}
+.fcard:hover{border-color:rgba(168,85,247,.3);transform:translateY(-3px)}
+.fcard-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+.fcard h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:7px}
+.fcard p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* FOOTER */
+footer{padding:28px 0;border-top:1px solid var(--border)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer p{font-size:13px;color:var(--muted)}
+.footer-links{display:flex;gap:24px}
+.footer-links span{font-size:12px;color:var(--muted);cursor:pointer;transition:color .2s}
+.footer-links span:hover{color:var(--cb)}
+
+/* ═══════════════════════════════════════════
+   HOME PAGE SPECIFIC
+═══════════════════════════════════════════ */
+#hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;position:relative;overflow:hidden}
+.orb1{position:absolute;top:-20%;left:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 65%);pointer-events:none}
+.orb2{position:absolute;bottom:-20%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.12) 0%,transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:860px}
+.hero-h1{font-size:clamp(52px,7.5vw,96px);font-weight:800;line-height:.92;letter-spacing:-3px;color:var(--white);margin-bottom:30px}
+.hero-sub{font-size:19px;color:var(--muted);max-width:540px;line-height:1.7;margin-bottom:48px;font-weight:400}
+.hero-sub strong{color:var(--white);font-weight:600}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:72px}
+.hero-metrics{display:flex;gap:56px;flex-wrap:wrap;padding-top:44px;border-top:1px solid var(--border)}
+.metric-num{font-size:40px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:4px;background:linear-gradient(135deg,var(--vb),var(--cb));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.metric-label{font-size:12px;color:var(--muted);letter-spacing:.5px}
+
+/* Sectors grid on home */
+.sectors-sec{padding:120px 0;background:var(--bg2)}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.sectors-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sectors-grid{grid-template-columns:1fr}}
+.sec-card{border-radius:18px;overflow:hidden;border:1px solid var(--border);background:var(--bg3);cursor:pointer;transition:all .3s}
+.sec-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:rgba(168,85,247,.4)}
+.sec-card-top{height:140px;display:flex;align-items:center;justify-content:center;font-size:60px;position:relative;overflow:hidden}
+.sec-card-body{padding:22px}
+.sec-card-title{font-size:20px;font-weight:800;color:var(--white);margin-bottom:6px;letter-spacing:-.5px}
+.sec-card-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.sec-card-link{font-size:12px;font-weight:700;color:var(--vb);letter-spacing:.5px;text-transform:uppercase}
+
+/* Home previews (mocks) */
+#previews{padding:120px 0}
+.prev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.prev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.prev-grid{grid-template-columns:1fr}}
+.pcard{border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative;background:var(--bg2);cursor:pointer}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.pmock{height:210px;overflow:hidden;flex-shrink:0}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,8,15,.97) 0%,rgba(7,8,15,.5) 55%,transparent 100%);opacity:0;transition:opacity .3s;pointer-events:none}
+.pcard:hover .pov{opacity:1}
+.pinfo{padding:18px 20px 20px}
+.ptag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.pname{font-size:18px;font-weight:800;color:var(--white);margin-bottom:5px;letter-spacing:-.5px}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.5}
+.phov{position:absolute;bottom:18px;right:18px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:7px 14px;border-radius:20px;opacity:0;transform:translateY(4px);transition:all .3s .05s}
+.pcard:hover .phov{opacity:1;transform:translateY(0)}
+
+/* Home offers */
+#offres{padding:120px 0;background:var(--bg2)}
+.offres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.offres-grid{grid-template-columns:1fr}}
+.ocard2{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:36px 28px;display:flex;flex-direction:column;position:relative;transition:all .3s}
+.ocard2:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px)}
+.ocard2.feat{background:linear-gradient(160deg,#160D2E,#0E1A2E);border:1px solid rgba(168,85,247,.5)}
+.ocard2-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap}
+.ocard2-type{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;color:var(--vb)}
+.ocard2 h3{font-size:26px;font-weight:800;color:var(--white);letter-spacing:-.5px;margin-bottom:8px;line-height:1.1}
+.oprice2{font-size:34px;font-weight:800;letter-spacing:-1.5px;margin-bottom:8px;line-height:1;background:linear-gradient(135deg,var(--vb),var(--cb));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.oprice2 small{font-size:13px;font-weight:400;-webkit-text-fill-color:var(--muted);background:none}
+.odesc2{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:24px}
+.obuls2{list-style:none;margin-bottom:32px;flex:1;display:flex;flex-direction:column;gap:10px}
+.obul2{font-size:13px;color:rgba(240,238,255,.65);display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+.obul2::before{content:'✓';width:16px;height:16px;border-radius:4px;background:rgba(168,85,247,.2);color:var(--vb);font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ocard2:nth-child(2) .obul2::before{background:rgba(6,182,212,.2);color:var(--cb)}
+.ocard2:nth-child(3) .obul2::before{background:rgba(132,204,22,.2);color:var(--lime)}
+
+/* Steps */
+.steps-sec{padding:100px 0}
+.msteps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative}
+.msteps::before{content:'';position:absolute;top:31px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--vb),var(--cb),transparent);z-index:0}
+@media(max-width:768px){.msteps{grid-template-columns:1fr 1fr;gap:20px}.msteps::before{display:none}}
+.sitem{text-align:center;padding:0 14px;position:relative;z-index:1}
+.snl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.scirc{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:22px;position:relative}
+.scirc::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));z-index:-1}
+.s1 .scirc{background:linear-gradient(135deg,#3B0764,#1E1B4B)}
+.s2 .scirc{background:linear-gradient(135deg,#164E63,#083344)}
+.s3 .scirc{background:linear-gradient(135deg,#3B0764,#083344)}
+.s4 .scirc{background:linear-gradient(135deg,#14532D,#052E16)}
+.sitem h4{font-size:17px;font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-.3px}
+.sitem p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Pourquoi */
+.why-sec{padding:100px 0;background:var(--bg2)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr}}
+.dcard{padding:28px 24px;border:1px solid var(--border);border-radius:16px;background:var(--bg3);transition:all .3s}
+.dcard:hover{border-color:rgba(168,85,247,.3);transform:translateY(-3px)}
+.dicon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+.d1{background:rgba(168,85,247,.15)}.d2{background:rgba(6,182,212,.15)}.d3{background:rgba(132,204,22,.15)}
+.d4{background:rgba(236,72,153,.15)}.d5{background:rgba(168,85,247,.15)}.d6{background:rgba(6,182,212,.15)}
+.dcard h4{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:-.3px}
+.dcard p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Mocks home */
+.mr{background:linear-gradient(160deg,#1a0a05,#3d1a0a,#1a0a05)}
+.mr .mn{height:34px;background:rgba(0,0,0,.5);display:flex;align-items:center;padding:0 14px}
+.mr .ml{width:68px;height:9px;background:#D4A853;border-radius:3px}
+.mr .mh{padding:18px 14px 10px;text-align:center}
+.mr .mt1{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:5px;font-family:Georgia,serif}
+.mr .mt1 i{color:#D4A853;font-style:normal}
+.mr .ms{font-size:8px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.mr .mb{display:inline-block;background:#D4A853;color:#000;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:5px 13px;border-radius:20px}
+.mr .mi{display:flex;gap:5px;padding:8px 14px}
+.mr .mi div{flex:1;height:42px;border-radius:6px}
+.mr .mi div:nth-child(1){background:linear-gradient(135deg,#8B4513,#CD853F)}
+.mr .mi div:nth-child(2){background:linear-gradient(135deg,#2D4A1E,#4A7C2F)}
+.mr .mi div:nth-child(3){background:linear-gradient(135deg,#7B3F00,#C0612B)}
+.mb2{background:linear-gradient(160deg,#0d0610,#1a0b2e,#0d0610)}
+.mb2 .mn{height:34px;background:rgba(0,0,0,.4);display:flex;align-items:center;padding:0 14px}
+.mb2 .ml2{width:78px;height:8px;background:linear-gradient(90deg,#EC4899,#A855F7);border-radius:3px}
+.mb2 .mh2{padding:16px 14px;display:flex;gap:10px;align-items:center}
+.mb2 .mimg{width:88px;height:108px;border-radius:10px;background:linear-gradient(160deg,#4a1942,#8B1A6B,#C2185B);flex-shrink:0}
+.mb2 .mtag{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#EC4899;margin-bottom:5px}
+.mb2 .mh3{font-size:15px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:7px}
+.mb2 .mh3 i{color:#EC4899;font-style:normal}
+.mb2 .msub{font-size:8px;color:rgba(255,255,255,.35);margin-bottom:9px}
+.mb2 .mbtn{display:inline-block;background:linear-gradient(135deg,#EC4899,#A855F7);color:#fff;font-size:7px;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:5px 11px;border-radius:20px}
+.mp{background:linear-gradient(160deg,#050D1A,#0A1929,#050D1A)}
+.mp .mn{height:34px;background:rgba(0,0,0,.5);display:flex;align-items:center;padding:0 14px}
+.mp .mlp{width:88px;height:8px;background:#22D3EE;border-radius:3px}
+.mp .mbody{padding:14px}
+.mp .mbig{font-size:20px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:3px;line-height:1}
+.mp .mbig span{color:#22D3EE}
+.mp .mssub{font-size:8px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:13px}
+.mp .mcards{display:flex;gap:5px}
+.mp .mc{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(34,211,238,.2);border-radius:7px;padding:7px 5px;text-align:center}
+.mp .mcn{font-size:13px;font-weight:900;color:#22D3EE}
+.mp .mcl{font-size:6px;color:rgba(255,255,255,.35);margin-top:2px}
+.ma{background:linear-gradient(160deg,#0A0A08,#1A1A0F,#0A0A08)}
+.ma .mn{height:34px;background:rgba(0,0,0,.5);display:flex;align-items:center;padding:0 14px}
+.ma .mla{width:74px;height:9px;background:#84CC16;border-radius:3px}
+.ma .mban{height:68px;background:linear-gradient(135deg,#1C2B05,#2D4A0A,#3D6B0F);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ma .mban::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(132,204,22,.05) 8px,rgba(132,204,22,.05) 9px)}
+.ma .mbt{font-size:16px;font-weight:900;color:#fff;letter-spacing:-.5px;position:relative;z-index:1}
+.ma .mbt span{color:#84CC16}
+.ma .mpills{display:flex;gap:5px;padding:9px 14px}
+.ma .pill{flex:1;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.2);border-radius:5px;padding:5px 3px;text-align:center;font-size:7px;color:#84CC16;font-weight:700;text-transform:uppercase}
+.ma .mcs{background:#84CC16;margin:0 14px;border-radius:7px;padding:6px;text-align:center;font-size:9px;font-weight:900;color:#000;text-transform:uppercase;letter-spacing:1px}
+.mst{background:linear-gradient(160deg,#080810,#0F0F25,#080810)}
+.mst .mn{height:34px;background:rgba(255,255,255,.04);display:flex;align-items:center;padding:0 14px;gap:8px}
+.mst .mls{width:58px;height:9px;background:linear-gradient(90deg,#A855F7,#06B6D4);border-radius:3px}
+.mst .chip{font-size:7px;font-weight:700;letter-spacing:1px;color:#06B6D4;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.3);padding:2px 7px;border-radius:20px;margin-left:auto}
+.mst .mhs{padding:13px 14px 8px;text-align:center}
+.mst .mhl{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1.05;margin-bottom:7px}
+.mst .mhl span{background:linear-gradient(90deg,#A855F7,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.mst .mrow{display:flex;gap:5px;margin-bottom:8px}
+.mst .mbtn1{flex:1;height:21px;background:linear-gradient(135deg,#7C3AED,#06B6D4);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:900;color:#fff;text-transform:uppercase}
+.mst .mbtn2{flex:1;height:21px;border:1px solid rgba(255,255,255,.2);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:7px;color:rgba(255,255,255,.4);text-transform:uppercase}
+.mst .mfeat{display:flex;gap:5px;padding:0 14px}
+.mst .mf{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:7px 5px;text-align:center}
+.mst .mfd{width:14px;height:14px;border-radius:4px;margin:0 auto 3px}
+.mst .mfl{font-size:6px;color:rgba(255,255,255,.35)}
+.mco{background:linear-gradient(160deg,#0D0A18,#180F30,#0D0A18)}
+.mco .mn{height:34px;background:rgba(0,0,0,.4);display:flex;align-items:center;padding:0 14px}
+.mco .mlc{width:78px;height:9px;background:linear-gradient(90deg,#F59E0B,#EF4444);border-radius:3px}
+.mco .mbc{background:linear-gradient(135deg,#F59E0B,#EF4444);padding:7px 14px;display:flex;align-items:center;justify-content:space-between}
+.mco .mpr{font-size:9px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px}
+.mco .mpr span{font-size:13px}
+.mco .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:9px 14px}
+.mco .mprod{background:rgba(255,255,255,.06);border-radius:7px;overflow:hidden}
+.mco .mpri{height:34px}
+.mco .mpri.c1{background:linear-gradient(135deg,#7C3AED,#A855F7)}
+.mco .mpri.c2{background:linear-gradient(135deg,#0891B2,#06B6D4)}
+.mco .mpri.c3{background:linear-gradient(135deg,#D97706,#F59E0B)}
+.mco .mpin{padding:4px;text-align:center}
+.mco .mpn{font-size:6px;color:rgba(255,255,255,.5);margin-bottom:1px}
+.mco .mpp{font-size:8px;font-weight:900;color:#F59E0B}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <span class="logo" onclick="nav(&#39;/&#39;)">WEB<em>craft</em></span>
+    <ul class="nav-links">
+      <li class="nav-dd">
+        <span>Secteurs ▾</span>
+        <div class="dd-menu">
+          <div class="dd-sect">Alimentation</div>
+          <div class="dd-item" onclick="nav(&#39;/restauration&#39;)">🍽 Restauration</div>
+          <div class="dd-sect">Bien-être</div>
+          <div class="dd-item" onclick="nav(&#39;/beaute&#39;)">💅 Beauté</div>
+          <div class="dd-item" onclick="nav(&#39;/sport-sante&#39;)">💪 Sport &amp; Santé</div>
+          <div class="dd-sect">Commerce</div>
+          <div class="dd-item" onclick="nav(&#39;/artisans&#39;)">🔨 Artisans</div>
+          <div class="dd-item" onclick="nav(&#39;/commerce-local&#39;)">🛍 Commerce local</div>
+          <div class="dd-item" onclick="nav(&#39;/hotellerie&#39;)">🏨 Hôtellerie</div>
+        </div>
+      </li>
+      <li><a onclick="nav(&#39;/#offres&#39;)">Offres</a></li>
+      <li><a onclick="nav(&#39;/#methode&#39;)">Méthode</a></li>
+      <li><a onclick="nav(&#39;/#contact&#39;)">Contact</a></li>
+    </ul>
+    <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Demander un devis →</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: HOME /
+═══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <section id="hero">
+    <div class="orb1"></div><div class="orb2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">Agence web · France · Disponible maintenant</div>
+        <h1 class="hero-h1">Votre site web doit<br><span class="grad">vendre.</span><br><span class="soft">Pas juste exister.</span></h1>
+        <p class="hero-sub">On crée des sites qui transforment vos visiteurs en clients.<br><strong>Design premium, message qui convertit, livraison en moins d'une semaine.</strong></p>
+        <div class="hero-ctas">
+          <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel gratuit →</button>
+          <button class="btn-g" onclick="nav(&#39;/#offres&#39;)">Voir les offres</button>
+        </div>
+        <div class="hero-metrics">
+          <div><div class="metric-num">&lt;1 sem</div><div class="metric-label">Livraison garantie</div></div>
+          <div><div class="metric-num">100%</div><div class="metric-label">Sur mesure</div></div>
+          <div><div class="metric-num">3×</div><div class="metric-label">Plus de contacts</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTEURS -->
+  <section class="sectors-sec">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge">Nos spécialités</div>
+        <h2>Experts dans<br><span class="grad">votre secteur.</span></h2>
+        <p>On ne fait pas des sites génériques. On est spécialisés par industrie — et ça se voit.</p>
+      </div>
+      <div class="sectors-grid">
+        <div class="sec-card" onclick="nav(&#39;/restauration&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#1a0a05,#3d1a0a)">🍽</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Restauration</div>
+            <div class="sec-card-desc">Pizzerias, restaurants gastronomiques, coffee shops, boulangeries. Des sites qui remplissent les tables.</div>
+            <div class="sec-card-link">Voir les offres resto →</div>
+          </div>
+        </div>
+        <div class="sec-card" onclick="nav(&#39;/beaute&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#1a0b2e,#3d0a2e)">💅</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Beauté</div>
+            <div class="sec-card-desc">Salons de coiffure, instituts, spas, nail art. Des sites premium qui remplissent votre agenda.</div>
+            <div class="sec-card-link">Voir les offres beauté →</div>
+          </div>
+        </div>
+        <div class="sec-card" onclick="nav(&#39;/sport-sante&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#071a0a,#0a3d15)">💪</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Sport &amp; Santé</div>
+            <div class="sec-card-desc">Coachs, salles de sport, kinés, nutritionnistes. Un site qui remplit votre agenda et vend vos programmes.</div>
+            <div class="sec-card-link">Voir les offres sport →</div>
+          </div>
+        </div>
+        <div class="sec-card" onclick="nav(&#39;/artisans&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#0A0A08,#1A1A0F)">🔨</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Artisans</div>
+            <div class="sec-card-desc">Plombiers, électriciens, peintres, maçons. Des leads qualifiés sans passer par les plateformes.</div>
+            <div class="sec-card-link">Voir les offres artisans →</div>
+          </div>
+        </div>
+        <div class="sec-card" onclick="nav(&#39;/commerce-local&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#0D0A18,#1a0a30)">🛍</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Commerce local</div>
+            <div class="sec-card-desc">Fleuristes, cavistes, chocolatiers, librairies. Votre boutique unique, visible partout.</div>
+            <div class="sec-card-link">Voir les offres commerce →</div>
+          </div>
+        </div>
+        <div class="sec-card" onclick="nav(&#39;/hotellerie&#39;)">
+          <div class="sec-card-top" style="background:linear-gradient(135deg,#050D1A,#0A1929)">🏨</div>
+          <div class="sec-card-body">
+            <div class="sec-card-title">Hôtellerie</div>
+            <div class="sec-card-desc">Hôtels, gîtes, B&amp;B, campings. Réduisez les commissions Booking et récupérez vos marges.</div>
+            <div class="sec-card-link">Voir les offres hôtellerie →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVIEWS -->
+  <section id="previews">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge">Ce qu'on crée pour vous</div>
+        <h2>Taillé pour<br><span class="grad">votre secteur.</span></h2>
+        <p>Chaque industrie a ses codes. On les maîtrise. Voici à quoi pourrait ressembler le vôtre.</p>
+      </div>
+      <div class="prev-grid">
+        <div class="pcard" onclick="nav(&#39;/restauration&#39;)">
+          <div class="pmock mr"><div class="mn"><div class="ml"></div></div><div class="mh"><div class="mt1">La Table <i>d'Antoine</i></div><div class="ms">Cuisine gastronomique · Lyon</div><div class="mb">Réserver une table</div></div><div class="mi"><div></div><div></div><div></div></div></div>
+          <div class="pov"></div><div class="phov">Voir resto →</div>
+          <div class="pinfo"><div class="ptag" style="color:#D4A853">🍽 Restaurant</div><div class="pname">Gastronomique</div><div class="pdesc">Chaud, élégant. Conçu pour décrocher des réservations.</div></div>
+        </div>
+        <div class="pcard" onclick="nav(&#39;/beaute&#39;)">
+          <div class="pmock mb2"><div class="mn"><div class="ml2"></div></div><div class="mh2"><div class="mimg"></div><div><div class="mtag">Institut · Paris</div><div class="mh3">Beauté <i>sans</i> compromis</div><div class="msub">Soins premium · Sur RDV</div><div class="mbtn">Prendre RDV</div></div></div></div>
+          <div class="pov"></div><div class="phov">Voir beauté →</div>
+          <div class="pinfo"><div class="ptag" style="color:#EC4899">💅 Beauté</div><div class="pname">Luxe &amp; Soin</div><div class="pdesc">Violet, rose, sophistiqué. Pour attirer une clientèle premium.</div></div>
+        </div>
+        <div class="pcard" onclick="nav(&#39;/sport-sante&#39;)">
+          <div class="pmock mp"><div class="mn"><div class="mlp"></div></div><div class="mbody"><div class="mbig">Coaching <span>Elite</span></div><div class="mssub">Coach sportif · Paris</div><div class="mcards"><div class="mc"><div class="mcn">+200</div><div class="mcl">Clients</div></div><div class="mc"><div class="mcn">98%</div><div class="mcl">Résultats</div></div><div class="mc"><div class="mcn">24h</div><div class="mcl">Réponse</div></div></div></div></div>
+          <div class="pov"></div><div class="phov">Voir sport →</div>
+          <div class="pinfo"><div class="ptag" style="color:#22D3EE">💪 Sport</div><div class="pname">Coach &amp; Santé</div><div class="pdesc">Bleu nuit et cyan. Pour les pros du bien-être qui inspirent confiance.</div></div>
+        </div>
+        <div class="pcard" onclick="nav(&#39;/artisans&#39;)">
+          <div class="pmock ma"><div class="mn"><div class="mla"></div></div><div class="mban"><div class="mbt">Maçonnerie <span>Experts</span></div></div><div class="mpills"><div class="pill">BTP</div><div class="pill">Rénovation</div><div class="pill">Carrelage</div></div><div class="mcs">Devis gratuit sous 24h →</div></div>
+          <div class="pov"></div><div class="phov">Voir artisans →</div>
+          <div class="pinfo"><div class="ptag" style="color:#84CC16">🔨 Artisan</div><div class="pname">Solide &amp; Pro</div><div class="pdesc">Vert lime, sombre, efficace. Pour les artisans qui veulent des devis en continu.</div></div>
+        </div>
+        <div class="pcard" onclick="nav(&#39;/hotellerie&#39;)">
+          <div class="pmock mst"><div class="mn"><div class="mls"></div><div class="chip">DIRECT</div></div><div class="mhs"><div class="mhl">Réservez <span>directement.</span> Économisez.</div><div class="mrow"><div class="mbtn1">Réserver</div><div class="mbtn2">Voir chambres</div></div></div><div class="mfeat"><div class="mf"><div class="mfd" style="background:linear-gradient(135deg,#7C3AED,#A855F7)"></div><div class="mfl">Zéro frais</div></div><div class="mf"><div class="mfd" style="background:linear-gradient(135deg,#0891B2,#06B6D4)"></div><div class="mfl">Calendrier</div></div><div class="mf"><div class="mfd" style="background:linear-gradient(135deg,#059669,#10B981)"></div><div class="mfl">Tarifs directs</div></div></div></div>
+          <div class="pov"></div><div class="phov">Voir hôtellerie →</div>
+          <div class="pinfo"><div class="ptag" style="color:#A855F7">🏨 Hôtellerie</div><div class="pname">Réservation directe</div><div class="pdesc">Violet/cyan, dark mode. Pour récupérer les marges perdues sur Booking.</div></div>
+        </div>
+        <div class="pcard" onclick="nav(&#39;/commerce-local&#39;)">
+          <div class="pmock mco"><div class="mn"><div class="mlc"></div></div><div class="mbc"><div class="mpr">Nouveautés <span>→</span></div><div style="font-size:7px;font-weight:900;color:rgba(255,255,255,.9);text-transform:uppercase">Voir →</div></div><div class="mgrid"><div class="mprod"><div class="mpri c1"></div><div class="mpin"><div class="mpn">Bouquet</div><div class="mpp">35€</div></div></div><div class="mprod"><div class="mpri c2"></div><div class="mpin"><div class="mpn">Coffret</div><div class="mpp">55€</div></div></div><div class="mprod"><div class="mpri c3"></div><div class="mpin"><div class="mpn">Saisonnier</div><div class="mpp">28€</div></div></div></div></div>
+          <div class="pov"></div><div class="phov">Voir commerce →</div>
+          <div class="pinfo"><div class="ptag" style="color:#F59E0B">🛍 Commerce</div><div class="pname">Boutique locale</div><div class="pdesc">Chaud, authentique. Pour les commerçants qui veulent exister en ligne.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section id="offres">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge">Nos offres</div>
+        <h2>Choisissez votre<br>niveau <span class="grad">d'ambition.</span></h2>
+        <p>Trois offres claires. Pas de jargon. Pas de surprise.</p>
+      </div>
+      <div class="offres-grid">
+        <div class="ocard2">
+          <div class="ocard2-type">Essentiel</div>
+          <h3>Site Vitrine</h3>
+          <div class="oprice2">800€ <small>HT</small></div>
+          <p class="odesc2">Pour exister en ligne avec une image sérieuse qui rassure vos prospects dès le premier regard.</p>
+          <ul class="obuls2">
+            <li class="obul2">Design sur mesure · zéro template</li>
+            <li class="obul2">Jusqu'à 5 pages optimisées</li>
+            <li class="obul2">Mobile-first et ultra rapide</li>
+            <li class="obul2">Formulaire de contact intégré</li>
+            <li class="obul2">SEO technique de base</li>
+            <li class="obul2">Livraison en moins d'une semaine</li>
+          </ul>
+          <button class="btn-g" onclick="nav(&#39;/#contact&#39;)">Je démarre →</button>
+        </div>
+        <div class="ocard2 feat">
+          <div class="ocard2-badge">Le plus choisi</div>
+          <div class="ocard2-type" style="color:var(--cb)">Performance</div>
+          <h3>Refonte Stratégique</h3>
+          <div class="oprice2">1 800€ <small>HT</small></div>
+          <p class="odesc2">Votre site ne convertit pas ? On repart du fond, pas juste du style. Résultat garanti.</p>
+          <ul class="obuls2">
+            <li class="obul2">Audit complet de votre site actuel</li>
+            <li class="obul2">Restructuration du message &amp; pages</li>
+            <li class="obul2">Copywriting orienté conversion inclus</li>
+            <li class="obul2">Design premium 100% sur mesure</li>
+            <li class="obul2">SEO on-page complet</li>
+            <li class="obul2">Appels de suivi inclus</li>
+          </ul>
+          <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Je veux ça →</button>
+        </div>
+        <div class="ocard2">
+          <div class="ocard2-type" style="color:var(--lime)">Croissance</div>
+          <h3>Pack Acquisition</h3>
+          <div class="oprice2">Sur devis</div>
+          <p class="odesc2">Pour ceux qui veulent vraiment attaquer : site + stratégie d'acquisition de clients en ligne.</p>
+          <ul class="obuls2">
+            <li class="obul2">Tout de la Refonte Stratégique</li>
+            <li class="obul2">Landing pages optimisées pub</li>
+            <li class="obul2">Intégration CRM &amp; leads</li>
+            <li class="obul2">Stratégie SEO 3 mois incluse</li>
+            <li class="obul2">Accompagnement mensuel</li>
+            <li class="obul2">Reporting &amp; tableaux de bord</li>
+          </ul>
+          <button class="btn-g" onclick="nav(&#39;/#contact&#39;)">Discutons-en →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODE -->
+  <section id="methode" class="steps-sec">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge">Notre méthode</div>
+        <h2>Simple. Rapide.<br><span class="grad">Sans prise de tête.</span></h2>
+        <p>De zéro à un site en ligne en moins d'une semaine.</p>
+      </div>
+      <div class="msteps">
+        <div class="sitem s1"><div class="snl">Étape 01</div><div class="scirc">💬</div><h4>Cadrage</h4><p>Un appel de 45 min pour comprendre votre business, vos clients et vos objectifs. On ne part jamais dans le vague.</p></div>
+        <div class="sitem s2"><div class="snl">Étape 02</div><div class="scirc">✍️</div><h4>Message &amp; Structure</h4><p>On structure chaque page avec un objectif clair. Le texte est pensé pour convaincre, pas pour remplir l'espace.</p></div>
+        <div class="sitem s3"><div class="snl">Étape 03</div><div class="scirc">⚡</div><h4>Design &amp; Dev</h4><p>Maquette livrée rapidement. Vous validez. On développe. Premium, rapide, mobile-first. Sans compromis.</p></div>
+        <div class="sitem s4"><div class="snl">Étape 04</div><div class="scirc">🚀</div><h4>Mise en ligne</h4><p>On gère hébergement, domaine, SSL et analytics. Vous recevez les clés. Votre site tourne, vous aussi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI -->
+  <section class="why-sec">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge">Pourquoi nous</div>
+        <h2>On ne vend pas du design.<br>On vend <span class="grad">des résultats.</span></h2>
+      </div>
+      <div class="pgrid">
+        <div class="dcard"><div class="dicon d1">🎯</div><h4>Orienté conversion</h4><p>Chaque section a un but précis. On pense à vos clients avant de penser aux couleurs.</p></div>
+        <div class="dcard"><div class="dicon d2">✍️</div><h4>Copywriting inclus</h4><p>Pas besoin de rédiger vos textes. On écrit un message clair qui parle directement à vos prospects.</p></div>
+        <div class="dcard"><div class="dicon d3">⚡</div><h4>Livraison rapide</h4><p>Moins d'une semaine. On respecte les délais parce que votre temps a de la valeur.</p></div>
+        <div class="dcard"><div class="dicon d4">🔍</div><h4>SEO propre dès le départ</h4><p>Structure technique soignée, balises optimisées, vitesse au top. Google vous aimera.</p></div>
+        <div class="dcard"><div class="dicon d5">💎</div><h4>Image premium</h4><p>Vos clients vous jugent en 3 secondes. Ces 3 secondes doivent inspirer confiance.</p></div>
+        <div class="dcard"><div class="dicon d6">🤝</div><h4>Accompagnement simple</h4><p>Un interlocuteur unique, des réponses rapides. Pas de jargon, jamais de surprises.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-sec">
+    <div class="container">
+      <div class="sec-hd"><div class="badge">FAQ</div><h2>Les vraies <span class="grad">questions.</span></h2></div>
+      <div class="flist">
+        <div class="fi"><button class="fq" onclick="tF(this)">Combien de temps pour livrer mon site ?<span class="farr">+</span></button><div class="fa"><p>On s'engage sur <strong>moins d'une semaine</strong> pour les sites vitrine. Maquette rapide, validation, développement, mise en ligne — tout dans la foulée.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tF(this)">Est-ce que vous rédigez les textes ?<span class="farr">+</span></button><div class="fa"><p>Oui, inclus dans toutes nos offres. On travaille avec vous puis on rédige un texte <strong>orienté conversion</strong>. Vous relisez et validez.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tF(this)">Pourrai-je modifier le site moi-même ?<span class="farr">+</span></button><div class="fa"><p>Oui. CMS simple avec <strong>formation courte incluse</strong>. Changer un texte, une photo ou un prix : vous n'aurez pas besoin de nous appeler.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tF(this)">Pourquoi vous plutôt qu'un freelance à 300€ ?<span class="farr">+</span></button><div class="fa"><p>Un site à 300€, ça se voit. Ça rassure personne. Nos clients vendent des prestations à plusieurs centaines d'euros — leur site doit <strong>être à la hauteur</strong>.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tF(this)">Y a-t-il une maintenance après livraison ?<span class="farr">+</span></button><div class="fa"><p>Maintenance optionnelle <strong>à partir de 79€/mois</strong> : mises à jour, sauvegardes, retouches. Sinon le site est à vous, sans abonnement forcé.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contact" class="cta-fin">
+    <div class="cta-orb"></div>
+    <div class="container">
+      <div class="badge">Passez à l'action</div>
+      <h2>Votre site actuel<br><span class="grad">vous coûte</span><br><span class="soft">des clients.</span></h2>
+      <p>Un appel de 30 minutes. Gratuit. Sans engagement. On vous dit exactement ce qu'on peut faire — et à quel prix.</p>
+      <div class="cta-btns">
+        <a href="tel:+33600000000" class="btn-p">📞 Réserver un appel gratuit</a>
+        <a href="mailto:contact@webcraft.fr" class="btn-g">Envoyer un message</a>
+      </div>
+      <p class="cta-email">Ou directement : <a href="mailto:contact@webcraft.fr">contact@webcraft.fr</a></p>
+    </div>
+  </section>
+
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Agence web spécialisée · France</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span onclick="nav(&#39;/hotellerie&#39;)">Hôtellerie</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration
+═══════════════════════════════════════════ -->
+<div id="page-restauration" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(212,168,83,.08) 0%, transparent 70%)">
+    <div class="vh-orb1" style="background:radial-gradient(circle,rgba(212,168,83,.15) 0%,transparent 65%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Restauration</span></div>
+      <div class="badge" style="color:#D4A853;background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.3)">🍽 Spécialiste Restauration</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Un site qui<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">remplit vos tables.</span><br><span class="soft">Pas juste votre vitrine.</span></h1>
+      <p class="vh-sub">On crée des sites pour les restaurateurs qui veulent plus de réservations, plus de commandes en ligne et moins de dépendance aux plateformes qui vous ponctionnent.</p>
+      <div class="vh-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel gratuit →</button>
+        <button class="btn-g" onclick="nav(&#39;/restauration/pizzeria&#39;)">Voir la page Pizzeria</button>
+      </div>
+      <div class="vh-stats">
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+40%</div><div class="vs-lbl">Réservations en ligne</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">-20%</div><div class="vs-lbl">Dépendance aux apps</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">&lt;1 sem</div><div class="vs-lbl">Livraison</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prob-sec">
+    <div class="container">
+      <div class="sec-hd"><h2>Les 3 problèmes<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">de tout restaurateur</span></h2></div>
+      <div class="prob-grid">
+        <div class="prob-card"><div class="prob-icon">📱</div><h4>Uber Eats vous vide les poches</h4><p>15 à 30% de commission sur chaque commande. Un site avec commande directe, c'est tout ça que vous récupérez.</p></div>
+        <div class="prob-card"><div class="prob-icon">📅</div><h4>Les réservations passent encore par téléphone</h4><p>Vous perdez des clients qui ne rappellent pas. Un module de réservation en ligne tourne 24h/24 à votre place.</p></div>
+        <div class="prob-card"><div class="prob-icon">🔍</div><h4>Vous êtes invisible sur Google</h4><p>"Restaurant [votre ville]" — si vous n'apparaissez pas dans les 3 premiers résultats, vous perdez des clients chaque jour.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subcat-sec">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="badge" style="color:#D4A853;background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.3)">Votre type d'établissement</div>
+        <h2>On est experts<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">dans votre niche.</span></h2>
+        <p>Chaque type de restaurant a ses codes. On les connaît par cœur.</p>
+      </div>
+      <div class="subcat-grid">
+        <div class="subcat-card" onclick="nav(&#39;/restauration/pizzeria&#39;)">
+          <div class="sc-img" style="background:linear-gradient(135deg,#3d1a0a,#7a3215)">🍕</div>
+          <div class="sc-body"><div class="sc-title">Pizzeria &amp; Fast-food</div><div class="sc-desc">Commande en ligne directe, zéro commission. Menu digital, click &amp; collect.</div><div class="sc-link">Voir la page spécialisée →</div></div>
+        </div>
+        <div class="subcat-card" onclick="nav(&#39;/restauration/gastronomique&#39;)">
+          <div class="sc-img" style="background:linear-gradient(135deg,#1a0a05,#3d1a0a)">🍷</div>
+          <div class="sc-body"><div class="sc-title">Restaurant gastronomique</div><div class="sc-desc">Image premium, storytelling chef, réservation en ligne, menu saisonnier.</div><div class="sc-link">Voir la page spécialisée →</div></div>
+        </div>
+        <div class="subcat-card" onclick="nav(&#39;/restauration/coffee-shop&#39;)">
+          <div class="sc-img" style="background:linear-gradient(135deg,#1a0f05,#3d2a10)">☕</div>
+          <div class="sc-body"><div class="sc-title">Coffee shop &amp; Brunch</div><div class="sc-desc">Lifestyle fort, galerie Instagram, événements, carte du moment.</div><div class="sc-link">Voir la page spécialisée →</div></div>
+        </div>
+        <div class="subcat-card" onclick="nav(&#39;/restauration/kebab&#39;)">
+          <div class="sc-img" style="background:linear-gradient(135deg,#1a0805,#3d1005)">🥙</div>
+          <div class="sc-body"><div class="sc-title">Kebab &amp; Snack</div><div class="sc-desc">Menu simple, click &amp; collect, Google Maps optimisé, commande rapide.</div><div class="sc-link">Voir la page spécialisée →</div></div>
+        </div>
+        <div class="subcat-card" onclick="nav(&#39;/restauration/boulangerie&#39;)">
+          <div class="sc-img" style="background:linear-gradient(135deg,#1a1005,#3d2a05)">🥖</div>
+          <div class="sc-body"><div class="sc-title">Boulangerie &amp; Pâtisserie</div><div class="sc-desc">Produits du jour, commandes spéciales, horaires, ambiance artisanale.</div><div class="sc-link">Voir la page spécialisée →</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testi-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce que disent nos<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">clients restaurateurs</span></h2></div>
+    <div class="testi-grid">
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Depuis que le site est en ligne, on reçoit en moyenne 15 réservations supplémentaires par semaine. Et on n'a plus besoin de décrocher le téléphone à chaque fois."</div><div class="tcard-auth">Marco B. · Pizzeria Il Vesuvio · Lyon</div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Le module de commande directe nous a permis de réduire de moitié notre dépendance à Uber Eats. En 3 mois, on a économisé plus de 2 000€ de commissions."</div><div class="tcard-auth">Fatima K. · Snack Le Méditerranée · Reims</div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"L'équipe a vraiment compris notre univers. Le site donne envie de venir manger avant même d'avoir lu le menu. Livré en 5 jours top chrono."</div><div class="tcard-auth">Jean-Pierre M. · Brasserie Le Clocher · Paris</div></div>
+    </div>
+  </div></section>
+
+  <section class="cta-fin"><div class="cta-orb"></div>
+    <div class="container">
+      <div class="badge" style="color:#D4A853;background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.3)">Restaurateurs</div>
+      <h2>Chaque table vide<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">c'est de l'argent</span><br><span class="soft">qui part à la concurrence.</span></h2>
+      <p>Appel gratuit de 30 min. On vous montre exactement ce qu'on peut créer pour votre restaurant.</p>
+      <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit →</button></div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Spécialiste sites restaurants</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span><span onclick="nav(&#39;/restauration/pizzeria&#39;)">Pizzeria</span><span onclick="nav(&#39;/restauration/gastronomique&#39;)">Gastronomique</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration/pizzeria
+═══════════════════════════════════════════ -->
+<div id="page-restauration-pizzeria" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(239,68,68,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span class="sep">›</span><span class="current">Pizzeria</span></div>
+      <div class="sp-badge" style="color:#EF4444;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3)">🍕 Expert Pizzeria &amp; Fast-food</div>
+      <h1 class="sp-h1">Arrêtez de payer<br><span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">30% à Uber Eats.</span><br>Votre site commande.</h1>
+      <p class="sp-sub">Un site avec commande en ligne directe pour votre pizzeria ou fast-food. <strong>Zéro commission, 100% de la marge pour vous.</strong></p>
+      <div class="hero-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Calculer mes économies →</button>
+        <button class="btn-g" onclick="nav(&#39;/restauration&#39;)">← Retour Restauration</button>
+      </div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce qu'on crée pour<br><span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre pizzeria</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">🛒</div><h4>Commande directe en ligne</h4><p>Vos clients commandent sur votre site. Vous encaissez 100% sans commission à personne.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">📋</div><h4>Menu digital interactif</h4><p>Menu modifiable à la volée. Nouvelles pizzas, prix mis à jour, photos appétissantes. Zéro impression.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">📍</div><h4>SEO local ultra-ciblé</h4><p>"Pizzeria [votre ville]" — on vous met en tête de Google. Vos concurrents n'ont pas ça.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">🚴</div><h4>Module livraison &amp; Click &amp; Collect</h4><p>Gestion des horaires, zones de livraison, préparation à venir chercher. Tout est automatisé.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">⭐</div><h4>Avis Google intégrés</h4><p>Vos étoiles Google s'affichent directement sur votre site. La preuve sociale qui rassure.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(239,68,68,.15)">📱</div><h4>100% mobile</h4><p>80% de vos clients commandent depuis leur téléphone. Le site est parfait sur mobile. Toujours.</p></div>
+    </div>
+  </div></section>
+  <section class="results-sec"><div class="container">
+    <div class="sec-hd" style="margin-bottom:48px"><h2>Ce que ça <span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">change concrètement</span></h2></div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">-30%</div><div class="result-lbl">Commissions plateformes</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+50%</div><div class="result-lbl">Commandes directes</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">1ère</div><div class="result-lbl">Position Google local</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5j</div><div class="result-lbl">Livraison moyenne</div></div>
+    </div>
+  </div></section>
+  <section class="offers-sec"><div class="container">
+    <div class="sec-hd"><h2>Offres <span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Pizzeria</span></h2></div>
+    <div class="offers-grid">
+      <div class="oc"><div class="oc-type">Essentiel</div><h3>Site Vitrine</h3><div class="oc-price">800€ <small>HT</small></div><p class="oc-desc">Pour exister en ligne avec une image pro et un menu digital.</p><ul class="oc-buls"><li class="oc-bul">Design sur mesure pizzeria</li><li class="oc-bul">Menu digital interactif</li><li class="oc-bul">SEO local ciblé</li><li class="oc-bul">Mobile-first</li></ul><button class="btn-g" onclick="nav(&#39;/#contact&#39;)">Je démarre →</button></div>
+      <div class="oc feat"><div class="oc-badge">Recommandé</div><div class="oc-type" style="color:var(--cb)">Performance</div><h3>Site + Commande</h3><div class="oc-price">1 400€ <small>HT</small></div><p class="oc-desc">Site vitrine + commande directe en ligne. Zéro commission.</p><ul class="oc-buls"><li class="oc-bul">Tout du site vitrine</li><li class="oc-bul">Module commande intégré</li><li class="oc-bul">Click &amp; collect</li><li class="oc-bul">Notifications SMS/email</li></ul><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Je veux ça →</button></div>
+      <div class="oc"><div class="oc-type" style="color:var(--lime)">Premium</div><h3>Site + Livraison</h3><div class="oc-price">1 900€ <small>HT</small></div><p class="oc-desc">La solution complète avec gestion de la livraison intégrée.</p><ul class="oc-buls"><li class="oc-bul">Tout du site commande</li><li class="oc-bul">Gestion zones livraison</li><li class="oc-bul">Suivi commandes</li><li class="oc-bul">Dashboard pizzeria</li></ul><button class="btn-g" onclick="nav(&#39;/#contact&#39;)">Discutons-en →</button></div>
+    </div>
+  </div></section>
+  <section class="faq-sec"><div class="container">
+    <div class="sec-hd"><h2>Questions <span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Pizzeria</span></h2></div>
+    <div class="flist">
+      <div class="fi"><button class="fq" onclick="tF(this)">Est-ce que je peux garder Uber Eats en parallèle ?<span class="farr">+</span></button><div class="fa"><p>Oui, bien sûr. On recommande de <strong>démarrer en parallèle</strong> et de basculer progressivement vos clients vers la commande directe avec des promotions exclusives sur votre site.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Comment je gère les commandes qui arrivent ?<span class="farr">+</span></button><div class="fa"><p>Les commandes arrivent sur une <strong>tablette ou application simple</strong>. Notification sonore, détail de la commande, confirmation automatique au client. Zéro complication.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Puis-je changer mes prix et mon menu moi-même ?<span class="farr">+</span></button><div class="fa"><p>Oui, <strong>en quelques secondes</strong> depuis votre téléphone. On vous forme en 20 minutes, et après vous êtes totalement autonome.</p></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Combien Uber Eats<br><span style="background:linear-gradient(135deg,#EF4444,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous coûte</span><br><span class="soft">par mois ?</span></h2>
+    <p>On vous le calcule gratuitement sur notre appel. Et on vous montre exactement combien vous récupériez avec un site de commande directe.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Calculer mes économies gratuitement</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites pizzerias &amp; fast-food</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">← Restauration</span><span onclick="nav(&#39;/restauration/kebab&#39;)">Kebab</span><span onclick="nav(&#39;/restauration/gastronomique&#39;)">Gastronomique</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration/kebab
+═══════════════════════════════════════════ -->
+<div id="page-restauration-kebab" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(245,158,11,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span class="sep">›</span><span class="current">Kebab &amp; Snack</span></div>
+      <div class="sp-badge" style="color:#F59E0B;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3)">🥙 Expert Kebab &amp; Snack</div>
+      <h1 class="sp-h1">Votre kebab mérite<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">d'être trouvé</span><br>en premier sur Google.</h1>
+      <p class="sp-sub">Un site rapide, visible, avec commande en ligne. <strong>Vos clients affamés vous trouvent avant votre concurrent d'en face.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Être en tête de Google →</button><button class="btn-g" onclick="nav(&#39;/restauration&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce qui fait la différence<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">pour un snack</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">🔍</div><h4>Numéro 1 sur Google Maps</h4><p>"Kebab [votre ville]" — on vous positionne en tête. Vos concurrents vous enverront leurs clients.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">⚡</div><h4>Site ultra rapide</h4><p>Les clients affamés n'attendent pas. Votre site se charge en moins d'1 seconde. Garanti.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">📋</div><h4>Menu simple et clair</h4><p>Menu visible en 2 secondes. Prix, formules, boissons. Pas de confusion, juste de l'appétit.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">🛒</div><h4>Click &amp; Collect intégré</h4><p>Commande à l'avance, récupère sans attendre. Vos clients fidèles adorent ça.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">📍</div><h4>Horaires &amp; localisation</h4><p>Vos horaires du jour, votre adresse, itinéraire direct depuis le téléphone. Aucune friction.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(245,158,11,.15)">💬</div><h4>WhatsApp Business intégré</h4><p>Un bouton qui ouvre directement WhatsApp pour les commandes groupées ou questions. Simple.</p></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Votre snack invisible<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">laisse partir</span><br><span class="soft">vos clients à la concurrence.</span></h2>
+    <p>Appel gratuit, 20 minutes. On vous montre comment apparaître en premier dans votre ville.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit maintenant</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites kebabs &amp; snacks</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">← Restauration</span><span onclick="nav(&#39;/restauration/pizzeria&#39;)">Pizzeria</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration/gastronomique
+═══════════════════════════════════════════ -->
+<div id="page-restauration-gastronomique" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(212,168,83,.06) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span class="sep">›</span><span class="current">Gastronomique</span></div>
+      <div class="sp-badge" style="color:#D4A853;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.3)">🍷 Expert Restaurant Gastronomique</div>
+      <h1 class="sp-h1">Un site à la<br><span style="background:linear-gradient(135deg,#D4A853,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent">hauteur de votre cuisine.</span></h1>
+      <p class="sp-sub">Votre table mérite une vitrine digitale aussi soignée que votre dressage. <strong>Réservations en ligne, storytelling chef, ambiance unique.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Voir une maquette →</button><button class="btn-g" onclick="nav(&#39;/restauration&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>L'excellence<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">aussi en ligne</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">📅</div><h4>Réservation en ligne premium</h4><p>Système de réservation élégant avec sélection du service, nombre de couverts, demandes spéciales.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">👨‍🍳</div><h4>Storytelling chef &amp; équipe</h4><p>On raconte votre histoire, votre parcours, votre philosophie culinaire. Ce qui vous rend unique.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">📸</div><h4>Galerie gastronomique premium</h4><p>Vos plats présentés comme dans un magazine culinaire. Chaque photo donne faim avant d'arriver.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">🍽</div><h4>Menu saisonnier dynamique</h4><p>Mettez à jour votre carte en quelques secondes. Suggestions du marché, menus du jour, accords mets-vins.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">🏆</div><h4>Mise en avant des distinctions</h4><p>Étoiles, récompenses, presse gastronomique. Tout s'affiche avec élégance pour renforcer la crédibilité.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(212,168,83,.15)">🎉</div><h4>Privatisation &amp; événements</h4><p>Page dédiée pour les événements privés, mariages, séminaires. Une source de revenus supplémentaire.</p></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Votre restaurant<br><span style="background:linear-gradient(135deg,#D4A853,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">mérite mieux</span><br><span class="soft">qu'une fiche Google.</span></h2>
+    <p>Montrez votre univers comme vous le méritez. Appel de 30 min pour voir ce qu'on peut créer ensemble.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Voir une maquette gratuite</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites restaurants gastronomiques</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">← Restauration</span><span onclick="nav(&#39;/restauration/coffee-shop&#39;)">Coffee shop</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration/coffee-shop
+═══════════════════════════════════════════ -->
+<div id="page-restauration-coffee-shop" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(161,107,60,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span class="sep">›</span><span class="current">Coffee Shop</span></div>
+      <div class="sp-badge" style="color:#A16B3C;background:rgba(161,107,60,.1);border:1px solid rgba(161,107,60,.3)">☕ Expert Coffee Shop &amp; Brunch</div>
+      <h1 class="sp-h1">Un site aussi<br><span style="background:linear-gradient(135deg,#A16B3C,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">chaleureux</span><br>que votre café.</h1>
+      <p class="sp-sub">Lifestyle fort, galerie qui donne envie, agenda des événements. <strong>Votre coffee shop devient la référence du quartier.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site café →</button><button class="btn-g" onclick="nav(&#39;/restauration&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Votre ambiance unique<br><span style="background:linear-gradient(135deg,#A16B3C,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">se vit aussi</span><br><span class="soft">en ligne.</span></h2>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites coffee shops &amp; brunchs</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">← Restauration</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /restauration/boulangerie
+═══════════════════════════════════════════ -->
+<div id="page-restauration-boulangerie" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(245,158,11,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/restauration&#39;)">Restauration</span><span class="sep">›</span><span class="current">Boulangerie</span></div>
+      <div class="sp-badge" style="color:#D97706;background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.3)">🥖 Expert Boulangerie &amp; Pâtisserie</div>
+      <h1 class="sp-h1">Votre savoir-faire<br><span style="background:linear-gradient(135deg,#D97706,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">artisanal</span><br>visible partout.</h1>
+      <p class="sp-sub">Produits du jour, commandes de gâteaux sur-mesure, horaires à jour. <strong>Vos clients n'appellent plus pour savoir si vous êtes ouverts.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site boulangerie →</button><button class="btn-g" onclick="nav(&#39;/restauration&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Votre boulangerie<br><span style="background:linear-gradient(135deg,#D97706,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">a une âme.</span><br><span class="soft">Votre site aussi.</span></h2>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites boulangeries &amp; pâtisseries</p><div class="footer-links"><span onclick="nav(&#39;/restauration&#39;)">← Restauration</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /beaute
+═══════════════════════════════════════════ -->
+<div id="page-beaute" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(236,72,153,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Beauté</span></div>
+      <div class="badge" style="color:#EC4899;background:rgba(236,72,153,.1);border-color:rgba(236,72,153,.3)">💅 Spécialiste Beauté</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Un site aussi<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">soigné que vos</span><br>prestations.</h1>
+      <p class="vh-sub">On crée des sites pour les professionnels de la beauté qui veulent un agenda plein, moins de no-shows, et une image premium qui justifie leurs tarifs.</p>
+      <div class="vh-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel →</button>
+        <button class="btn-g" onclick="nav(&#39;/beaute/salon-coiffure&#39;)">Voir Salon de coiffure</button>
+      </div>
+      <div class="vh-stats">
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">-80%</div><div class="vs-lbl">No-shows avec rappels auto</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">24/7</div><div class="vs-lbl">Prise de RDV automatique</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+35%</div><div class="vs-lbl">Nouveaux clients</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="prob-sec"><div class="container">
+    <div class="sec-hd"><h2>3 problèmes que règle<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre site beauté</span></h2></div>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-icon">📞</div><h4>Vous perdez des RDV le soir et le weekend</h4><p>Vos clients veulent réserver à 22h ou le dimanche. Sans réservation en ligne, ils vont chez une concurrente.</p></div>
+      <div class="prob-card"><div class="prob-icon">😤</div><h4>Les no-shows vous coûtent cher</h4><p>Un RDV raté = une heure perdue = 50€ à 150€ envolés. Les rappels automatiques règlent ça à 90%.</p></div>
+      <div class="prob-card"><div class="prob-icon">📸</div><h4>Instagram ne suffit plus pour convaincre</h4><p>Un profil Instagram ne rassure pas. Un site pro avec galerie, tarifs et avis, si. Vos clients décident avant d'appeler.</p></div>
+    </div>
+  </div></section>
+  <section class="subcat-sec"><div class="container">
+    <div class="sec-hd">
+      <div class="badge" style="color:#EC4899;background:rgba(236,72,153,.1);border-color:rgba(236,72,153,.3)">Votre spécialité</div>
+      <h2>Votre métier,<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">notre expertise.</span></h2>
+    </div>
+    <div class="subcat-grid">
+      <div class="subcat-card" onclick="nav(&#39;/beaute/salon-coiffure&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#2d0a3d,#6b1a7a)">💇</div><div class="sc-body"><div class="sc-title">Salon de coiffure</div><div class="sc-desc">RDV en ligne, galerie coiffures, équipe, fidélisation. L'agenda plein en permanence.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/beaute/institut&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a2e,#3d0a5e)">✨</div><div class="sc-body"><div class="sc-title">Institut &amp; Esthétique</div><div class="sc-desc">Prestations premium, avant/après, réservation, packages beauté. La clientèle haut de gamme.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/beaute/nail-art&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a1e,#4a0a5e)">💅</div><div class="sc-body"><div class="sc-title">Nail Art &amp; Onglerie</div><div class="sc-desc">Portfolio nail art, galerie TikTok-ready, réservation express. La clientèle jeune et connectée.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/beaute/spa&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1a1e,#0a3d4a)">🧖</div><div class="sc-body"><div class="sc-title">Spa &amp; Bien-être</div><div class="sc-desc">Ambiance premium, packages soins, réservation séjours. Attirer une clientèle CSP+.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/beaute/tatoueur&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a0a1a,#1a1a3d)">🎨</div><div class="sc-body"><div class="sc-title">Tatoueur &amp; Piercing</div><div class="sc-desc">Portfolio artistique massif, style artistique, prise de RDV, flash tattoo. La crédibilité artistique.</div><div class="sc-link">Voir la page →</div></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <div class="badge" style="color:#EC4899;background:rgba(236,72,153,.1);border-color:rgba(236,72,153,.3)">Professionnels beauté</div>
+    <h2>Votre agenda<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">peut se remplir</span><br><span class="soft">pendant que vous dormez.</span></h2>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit →</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Spécialiste sites beauté</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span><span onclick="nav(&#39;/beaute/salon-coiffure&#39;)">Coiffure</span><span onclick="nav(&#39;/beaute/spa&#39;)">Spa</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /beaute/salon-coiffure
+═══════════════════════════════════════════ -->
+<div id="page-beaute-salon-coiffure" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(168,85,247,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span class="sep">›</span><span class="current">Salon de coiffure</span></div>
+      <div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">💇 Expert Salon de Coiffure</div>
+      <h1 class="sp-h1">Votre agenda plein.<br><span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vos no-shows</span><br>à zéro.</h1>
+      <p class="sp-sub">Prise de RDV automatique 24h/24, rappels SMS, galerie qui donne envie. <strong>Votre salon tourne même quand vous coupez des cheveux.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Voir une démo RDV →</button><button class="btn-g" onclick="nav(&#39;/beaute&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce qu'on crée pour<br><span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre salon</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📅</div><h4>Réservation en ligne 24/7</h4><p>Vos clients réservent à minuit si ça leur chante. Plus de manque à gagner le soir et le weekend.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📱</div><h4>Rappels SMS automatiques</h4><p>SMS automatique 24h avant le RDV. -80% de no-shows. Vos heures de travail sont protégées.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📸</div><h4>Galerie coiffures</h4><p>Vos plus belles créations en avant. Avant/après, tendances, spécialités. Vos clients voient avant de venir.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">👥</div><h4>Présentation de l'équipe</h4><p>Chaque coiffeur avec son style et ses spécialités. Les clients choisissent leur coiffeur préféré en ligne.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">💰</div><h4>Tarifs clairs et transparents</h4><p>Grille tarifaire lisible. Pas de mauvaises surprises = plus de confiance = plus de nouveaux clients.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">⭐</div><h4>Avis Google mis en avant</h4><p>Vos 5 étoiles s'affichent en grand. La preuve sociale qui convainc les hésitants en 3 secondes.</p></div>
+    </div>
+  </div></section>
+  <section class="results-sec"><div class="container">
+    <div class="sec-hd" style="margin-bottom:48px"><h2>Ce que ça <span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">change</span></h2></div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">-80%</div><div class="result-lbl">No-shows</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+35%</div><div class="result-lbl">Nouveaux clients</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">24/7</div><div class="result-lbl">Réservations actives</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5j</div><div class="result-lbl">Livraison site</div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Combien de RDV<br><span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">manquez-vous</span><br><span class="soft">chaque semaine ?</span></h2>
+    <p>Calculons-le ensemble. Appel gratuit de 20 minutes et on vous montre exactement ce qu'un site peut changer.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites salons de coiffure</p><div class="footer-links"><span onclick="nav(&#39;/beaute&#39;)">← Beauté</span><span onclick="nav(&#39;/beaute/institut&#39;)">Institut</span><span onclick="nav(&#39;/beaute/nail-art&#39;)">Nail Art</span></div></div></div></footer>
+</div>
+
+<!-- Pages beauté simplifiées -->
+<div id="page-beaute-institut" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(236,72,153,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span class="sep">›</span><span class="current">Institut &amp; Esthétique</span></div>
+      <div class="sp-badge" style="color:#EC4899;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3)">✨ Expert Institut Beauté</div>
+      <h1 class="sp-h1">Votre institut<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">attire la clientèle</span><br>qu'il mérite.</h1>
+      <p class="sp-sub">Prestations premium, photos avant/après, réservation fluide. <strong>Votre site travaille à recruter des clients haut de gamme pendant que vous faites vos soins.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site institut →</button><button class="btn-g" onclick="nav(&#39;/beaute&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos soins valent<br><span style="background:linear-gradient(135deg,#EC4899,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">d'être vus.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites instituts beauté</p><div class="footer-links"><span onclick="nav(&#39;/beaute&#39;)">← Beauté</span></div></div></div></footer>
+</div>
+
+<div id="page-beaute-nail-art" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(168,85,247,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span class="sep">›</span><span class="current">Nail Art</span></div>
+      <div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">💅 Expert Nail Art</div>
+      <h1 class="sp-h1">Votre portfolio<br><span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">nail art</span><br>qui fait craquer.</h1>
+      <p class="sp-sub">Galerie massive de créations, réservation en ligne, tarifs clairs. <strong>Vos clients réservent après 3 secondes sur votre site.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/beaute&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre art mérite<br><span style="background:linear-gradient(135deg,#A855F7,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">d'être exposé.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites nail art</p><div class="footer-links"><span onclick="nav(&#39;/beaute&#39;)">← Beauté</span></div></div></div></footer>
+</div>
+
+<div id="page-beaute-spa" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(6,182,212,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span class="sep">›</span><span class="current">Spa &amp; Bien-être</span></div>
+      <div class="sp-badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)">🧖 Expert Spa &amp; Bien-être</div>
+      <h1 class="sp-h1">Un site aussi<br><span style="background:linear-gradient(135deg,#22D3EE,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">apaisant</span><br>que votre spa.</h1>
+      <p class="sp-sub">Ambiance premium, packages soins, réservation en ligne intuitive. <strong>Votre spa attire une clientèle CSP+ prête à investir dans leur bien-être.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site spa →</button><button class="btn-g" onclick="nav(&#39;/beaute&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>L'évasion commence<br><span style="background:linear-gradient(135deg,#22D3EE,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">sur votre site.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites spas &amp; bien-être</p><div class="footer-links"><span onclick="nav(&#39;/beaute&#39;)">← Beauté</span></div></div></div></footer>
+</div>
+
+<div id="page-beaute-tatoueur" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(124,58,237,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/beaute&#39;)">Beauté</span><span class="sep">›</span><span class="current">Tatoueur</span></div>
+      <div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">🎨 Expert Tatouage &amp; Piercing</div>
+      <h1 class="sp-h1">Votre style s'impose.<br><span style="background:linear-gradient(135deg,#A855F7,#6366F1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Votre portfolio</span><br>convainc.</h1>
+      <p class="sp-sub">Portfolio artistique massif, flash tattoo en ligne, prise de RDV, style artistique affiché. <strong>Les clients qui viennent savent déjà qu'ils veulent votre style.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon portfolio →</button><button class="btn-g" onclick="nav(&#39;/beaute&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre art parle.<br><span style="background:linear-gradient(135deg,#A855F7,#6366F1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Votre site aussi.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites tatoueurs &amp; piercing</p><div class="footer-links"><span onclick="nav(&#39;/beaute&#39;)">← Beauté</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /artisans
+═══════════════════════════════════════════ -->
+<div id="page-artisans" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(132,204,22,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Artisans</span></div>
+      <div class="badge" style="color:#84CC16;background:rgba(132,204,22,.1);border-color:rgba(132,204,22,.3)">🔨 Spécialiste Artisans</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Arrêtez de payer<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">des commissions.</span><br>Vos leads arrivent direct.</h1>
+      <p class="vh-sub">On crée des sites pour les artisans qui veulent des demandes de devis qualifiées, sans passer par Houzz, Habitant ou les plateformes qui vous ponctionnent à chaque chantier.</p>
+      <div class="vh-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel →</button>
+        <button class="btn-g" onclick="nav(&#39;/artisans/electricien-plombier&#39;)">Voir Électricien / Plombier</button>
+      </div>
+      <div class="vh-stats">
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0%</div><div class="vs-lbl">Commission sur vos devis</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+60%</div><div class="vs-lbl">Demandes de devis</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">#1</div><div class="vs-lbl">Google local</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="prob-sec"><div class="container">
+    <div class="sec-hd"><h2>Pourquoi les artisans<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ont besoin d'un site</span></h2></div>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-icon">💸</div><h4>Les plateformes vous volent vos marges</h4><p>Houzz, Habitant, Travaux.com — ils prennent 15 à 25% sur chaque mise en relation. Votre site = zéro commission.</p></div>
+      <div class="prob-card"><div class="prob-icon">🔍</div><h4>Vos concurrents apparaissent avant vous</h4><p>"Plombier urgence [ville]" — si ce n'est pas vous qui apparaissez en premier, c'est votre concurrent qui prend le chantier.</p></div>
+      <div class="prob-card"><div class="prob-icon">📋</div><h4>Vos réalisations restent dans votre téléphone</h4><p>Vous avez des dizaines de chantiers magnifiques. Personne ne les voit. Un portfolio en ligne change tout.</p></div>
+    </div>
+  </div></section>
+  <section class="subcat-sec"><div class="container">
+    <div class="sec-hd">
+      <div class="badge" style="color:#84CC16;background:rgba(132,204,22,.1);border-color:rgba(132,204,22,.3)">Votre corps de métier</div>
+      <h2>On connaît<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre métier.</span></h2>
+    </div>
+    <div class="subcat-grid">
+      <div class="subcat-card" onclick="nav(&#39;/artisans/electricien-plombier&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a2a05,#2d4a0a)">⚡</div><div class="sc-body"><div class="sc-title">Électricien &amp; Plombier</div><div class="sc-desc">Urgences 24h, zone d'intervention, certifications. Apparaître avant vos concurrents sur Google.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/artisans/peintre&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a1a0a,#3d3a10)">🖌️</div><div class="sc-body"><div class="sc-title">Peintre &amp; Plaquiste</div><div class="sc-desc">Réalisations avant/après, devis express, zone géo. Attirer les propriétaires qui cherchent la qualité.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/artisans/macon&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a1505,#3d3010)">🧱</div><div class="sc-body"><div class="sc-title">Maçon &amp; Carreleur</div><div class="sc-desc">Portfolio chantiers premium, certifications RGE, demande de devis structurée.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/artisans/menuisier&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a1005,#3d2510)">🪵</div><div class="sc-body"><div class="sc-title">Menuisier &amp; Charpentier</div><div class="sc-desc">Savoir-faire visible, sur-mesure mis en avant, storytelling artisan. Le premium qui se vend cher.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/artisans/paysagiste&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1a05,#1a3a0a)">🌿</div><div class="sc-body"><div class="sc-title">Paysagiste &amp; Jardinier</div><div class="sc-desc">Jardins réalisés en galerie, devis saisonnier, zone géo. Les propriétaires aisés vous trouvent facilement.</div><div class="sc-link">Voir la page →</div></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Chaque chantier perdu<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">c'est un concurrent</span><br><span class="soft">mieux référencé que vous.</span></h2>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit →</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites artisans &amp; BTP</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span><span onclick="nav(&#39;/artisans/electricien-plombier&#39;)">Élec/Plombier</span><span onclick="nav(&#39;/artisans/peintre&#39;)">Peintre</span></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: /artisans/electricien-plombier
+═══════════════════════════════════════════ -->
+<div id="page-artisans-electricien-plombier" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(234,179,8,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span class="sep">›</span><span class="current">Électricien &amp; Plombier</span></div>
+      <div class="sp-badge" style="color:#EAB308;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.3)">⚡ Expert Électricien &amp; Plombier</div>
+      <h1 class="sp-h1">Les urgences<br><span style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous trouvent</span><br>en 30 secondes.</h1>
+      <p class="sp-sub">Quand une canalisation lâche à 23h, vos clients cherchent sur Google. <strong>On vous met en tête de liste avant que votre concurrent réponde.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Apparaître en tête →</button><button class="btn-g" onclick="nav(&#39;/artisans&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce qu'on crée pour<br><span style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre activité</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">🚨</div><h4>Page urgence 24h/24</h4><p>Une page dédiée aux urgences avec numéro de téléphone cliquable en grand. Vos clients appellent directement.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">🔍</div><h4>SEO local ultra-ciblé</h4><p>"Plombier urgence [votre ville]" — on vous positionne en top 3 sur Google Maps et recherche. Immédiatement.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">📋</div><h4>Formulaire devis rapide</h4><p>Un formulaire simple, 3 champs, qui envoie la demande sur votre téléphone. Les leads arrivent directement.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">🗺️</div><h4>Zone d'intervention visible</h4><p>Carte de votre zone de travail. Vos clients savent si vous intervenez chez eux avant d'appeler. Zéro perte de temps.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">🏆</div><h4>Certifications RGE &amp; Qualibat</h4><p>Vos certifications affichées en gros. La réassurance qui convainc les clients d'appeler vous plutôt qu'un concurrent.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(234,179,8,.15)">🛠️</div><h4>Portfolio de réalisations</h4><p>Vos chantiers avant/après. Vos clients voient la qualité avant même de vous appeler. Moins de négociation sur les prix.</p></div>
+    </div>
+  </div></section>
+  <section class="results-sec"><div class="container">
+    <div class="sec-hd" style="margin-bottom:48px"><h2>Ce que ça <span style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">change</span></h2></div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0%</div><div class="result-lbl">Commission plateforme</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Top 3</div><div class="result-lbl">Google local</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+70%</div><div class="result-lbl">Appels entrants</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5j</div><div class="result-lbl">Livraison</div></div>
+    </div>
+  </div></section>
+  <section class="testi-sec"><div class="container">
+    <div class="sec-hd"><h2><span style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ce que disent</span> nos artisans</h2></div>
+    <div class="testi-grid">
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Depuis le site, je reçois 3 à 4 demandes de devis par semaine depuis Google. Avant j'attendais que le bouche-à-oreille fonctionne."</div><div class="tcard-auth">Karim B. · Plombier · Lyon</div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"J'ai arrêté de payer Habitant après 2 mois. Mon site me génère plus de leads et je garde 100% des marges."</div><div class="tcard-auth">Pascal M. · Électricien · Reims</div></div>
+      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Simple, rapide, efficace. Le site a été livré en 4 jours. Mon chiffre d'affaires a augmenté de 30% le premier trimestre."</div><div class="tcard-auth">Sofiane T. · Plombier-Chauffagiste · Paris</div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Combien d'urgences<br><span style="background:linear-gradient(135deg,#EAB308,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous ratez</span><br><span class="soft">chaque semaine ?</span></h2>
+    <p>Un appel de 20 minutes. On vous montre comment apparaître en premier sur Google dans votre ville.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Être en tête de Google</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites électriciens &amp; plombiers</p><div class="footer-links"><span onclick="nav(&#39;/artisans&#39;)">← Artisans</span><span onclick="nav(&#39;/artisans/peintre&#39;)">Peintre</span><span onclick="nav(&#39;/artisans/macon&#39;)">Maçon</span></div></div></div></footer>
+</div>
+
+<!-- Pages artisans simplifiées -->
+<div id="page-artisans-peintre" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(132,204,22,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span class="sep">›</span><span class="current">Peintre &amp; Plaquiste</span></div>
+      <div class="sp-badge" style="color:#84CC16;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.3)">🖌️ Expert Peintre &amp; Plaquiste</div>
+      <h1 class="sp-h1">Vos chantiers<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">avant/après</span><br>vendent pour vous.</h1>
+      <p class="sp-sub">Un portfolio de réalisations, un formulaire devis express, votre zone d'intervention. <strong>Les propriétaires qui cherchent un peintre de qualité vous trouvent directement.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/artisans&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos réalisations<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">méritent d'être vues.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites peintres &amp; plaquistes</p><div class="footer-links"><span onclick="nav(&#39;/artisans&#39;)">← Artisans</span></div></div></div></footer>
+</div>
+
+<div id="page-artisans-macon" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(132,204,22,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span class="sep">›</span><span class="current">Maçon &amp; Carreleur</span></div>
+      <div class="sp-badge" style="color:#84CC16;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.3)">🧱 Expert Maçon &amp; Carreleur</div>
+      <h1 class="sp-h1">Des chantiers<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">qualifiés</span><br>qui viennent à vous.</h1>
+      <p class="sp-sub">Portfolio chantiers, certifications RGE, devis structuré. <strong>Les clients qui vous contactent ont déjà vu votre travail et sont prêts à signer.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/artisans&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos certifications<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous démarquent.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites maçons &amp; carreleurs</p><div class="footer-links"><span onclick="nav(&#39;/artisans&#39;)">← Artisans</span></div></div></div></footer>
+</div>
+
+<div id="page-artisans-menuisier" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(132,204,22,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span class="sep">›</span><span class="current">Menuisier &amp; Charpentier</span></div>
+      <div class="sp-badge" style="color:#84CC16;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.3)">🪵 Expert Menuisier &amp; Charpentier</div>
+      <h1 class="sp-h1">Votre savoir-faire<br><span style="background:linear-gradient(135deg,#84CC16,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">sur-mesure</span><br>attire les bons clients.</h1>
+      <p class="sp-sub">Portfolio premium, storytelling artisan, devis sur-mesure. <strong>Les clients qui apprécient le travail bien fait vous trouvent et n'hésitent pas sur le prix.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon portfolio →</button><button class="btn-g" onclick="nav(&#39;/artisans&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Le sur-mesure<br><span style="background:linear-gradient(135deg,#84CC16,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">se voit.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites menuisiers &amp; charpentiers</p><div class="footer-links"><span onclick="nav(&#39;/artisans&#39;)">← Artisans</span></div></div></div></footer>
+</div>
+
+<div id="page-artisans-paysagiste" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(34,197,94,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/artisans&#39;)">Artisans</span><span class="sep">›</span><span class="current">Paysagiste</span></div>
+      <div class="sp-badge" style="color:#22C55E;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3)">🌿 Expert Paysagiste</div>
+      <h1 class="sp-h1">Vos jardins<br><span style="background:linear-gradient(135deg,#22C55E,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">transforment</span><br>leur propriété.</h1>
+      <p class="sp-sub">Galerie de réalisations, devis saisonnier, zone géo. <strong>Les propriétaires aisés qui cherchent un vrai paysagiste vous trouvent avant votre concurrent.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/artisans&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos jardins<br><span style="background:linear-gradient(135deg,#22C55E,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">méritent d'être admirés.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites paysagistes</p><div class="footer-links"><span onclick="nav(&#39;/artisans&#39;)">← Artisans</span></div></div></div></footer>
+</div>
+
+<!-- ═══ SPORT-SANTE, COMMERCE-LOCAL, HOTELLERIE (vertical pages) ═══ -->
+
+<div id="page-sport-sante" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(34,211,238,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Sport &amp; Santé</span></div>
+      <div class="badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3)">💪 Spécialiste Sport &amp; Santé</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Votre agenda plein.<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vos programmes</span><br>qui se vendent.</h1>
+      <p class="vh-sub">On crée des sites pour les pros du sport et de la santé qui veulent remplir leur agenda, vendre des programmes en ligne et construire une image qui justifie leurs tarifs.</p>
+      <div class="vh-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel →</button>
+        <button class="btn-g" onclick="nav(&#39;/sport-sante/coach-sportif&#39;)">Voir Coach sportif</button>
+      </div>
+      <div class="vh-stats">
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">24/7</div><div class="vs-lbl">Réservations actives</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+40%</div><div class="vs-lbl">Nouveaux clients</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">∞</div><div class="vs-lbl">Ventes programmes en ligne</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="subcat-sec"><div class="container">
+    <div class="sec-hd"><div class="badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3)">Votre spécialité</div><h2>On connaît<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre secteur.</span></h2></div>
+    <div class="subcat-grid">
+      <div class="subcat-card" onclick="nav(&#39;/sport-sante/coach-sportif&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1a10,#1a3a20)">🏋️</div><div class="sc-body"><div class="sc-title">Coach sportif</div><div class="sc-desc">Programmes en ligne, résultats clients, RDV, image premium. L'agenda plein à l'année.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/sport-sante/salle-sport&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1020,#1a2040)">🏟️</div><div class="sc-body"><div class="sc-title">Salle de sport &amp; CrossFit</div><div class="sc-desc">Abonnements, planning cours, inscription en ligne, ambiance communauté. Attirer et fidéliser.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/sport-sante/kine-osteo&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1520,#103040)">⚕️</div><div class="sc-body"><div class="sc-title">Kiné &amp; Ostéo</div><div class="sc-desc">RDV en ligne, spécialités, avis patients, carte localisation. Google remplit votre agenda.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/sport-sante/nutritionniste&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a200a,#1a3d1a)">🥗</div><div class="sc-body"><div class="sc-title">Nutritionniste &amp; Diéticien</div><div class="sc-desc">Programmes, témoignages résultats, consultation visio. La clientèle motivée vient à vous.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/sport-sante/yoga-pilates&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a20,#2d1a3d)">🧘</div><div class="sc-body"><div class="sc-title">Studio Yoga &amp; Pilates</div><div class="sc-desc">Planning cours, abonnements, communauté, ambiance zen. La fidélisation qui génère des revenus récurrents.</div><div class="sc-link">Voir la page →</div></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Vous aidez vos clients<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">à se transformer.</span><br><span class="soft">Votre site aussi.</span></h2>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit →</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites sport &amp; santé</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span><span onclick="nav(&#39;/sport-sante/coach-sportif&#39;)">Coach</span></div></div></div></footer>
+</div>
+
+<!-- Sport subpages -->
+<div id="page-sport-sante-coach-sportif" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(34,211,238,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/sport-sante&#39;)">Sport &amp; Santé</span><span class="sep">›</span><span class="current">Coach sportif</span></div>
+      <div class="sp-badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)">🏋️ Expert Coach Sportif</div>
+      <h1 class="sp-h1">Votre programme<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">mérite d'être vu.</span><br>Votre agenda aussi.</h1>
+      <p class="sp-sub">Site qui crédibilise, réservation séances, vente de programmes en ligne. <strong>Instagram ne suffit plus — votre site vend à votre place, même la nuit.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site coach →</button><button class="btn-g" onclick="nav(&#39;/sport-sante&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos résultats clients<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">parlent d'eux-mêmes.</span><br><span class="soft">Montrez-les.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites coachs sportifs</p><div class="footer-links"><span onclick="nav(&#39;/sport-sante&#39;)">← Sport &amp; Santé</span></div></div></div></footer>
+</div>
+
+<div id="page-sport-sante-salle-sport" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(34,211,238,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/sport-sante&#39;)">Sport</span><span class="sep">›</span><span class="current">Salle de sport</span></div><div class="sp-badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)">🏟️ Expert Salle de Sport</div><h1 class="sp-h1">Remplissez votre salle.<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vendez vos abonnements</span><br>en ligne.</h1><p class="sp-sub">Planning cours en ligne, inscription abonnements, ambiance communauté. <strong>Votre salle se vend 24h/24.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/sport-sante&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre communauté<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">commence ici.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites salles de sport</p><div class="footer-links"><span onclick="nav(&#39;/sport-sante&#39;)">← Sport</span></div></div></div></footer></div>
+
+<div id="page-sport-sante-kine-osteo" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(34,211,238,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/sport-sante&#39;)">Sport</span><span class="sep">›</span><span class="current">Kiné &amp; Ostéo</span></div><div class="sp-badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)">⚕️ Expert Kiné &amp; Ostéo</div><h1 class="sp-h1">Vos patients<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous trouvent.</span><br>Votre agenda se remplit.</h1><p class="sp-sub">RDV en ligne, spécialités affichées, avis patients. <strong>Google vous envoie des patients qualifiés chaque jour.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/sport-sante&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre expertise<br><span style="background:linear-gradient(135deg,#22D3EE,#84CC16);-webkit-background-clip:text;-webkit-text-fill-color:transparent">visible.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites kinés &amp; ostéos</p><div class="footer-links"><span onclick="nav(&#39;/sport-sante&#39;)">← Sport</span></div></div></div></footer></div>
+
+<div id="page-sport-sante-nutritionniste" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(132,204,22,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/sport-sante&#39;)">Sport</span><span class="sep">›</span><span class="current">Nutritionniste</span></div><div class="sp-badge" style="color:#84CC16;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.3)">🥗 Expert Nutritionniste</div><h1 class="sp-h1">Vos programmes<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">transforment</span><br>vos clients.</h1><p class="sp-sub">Témoignages résultats, consultations visio, programmes à vendre en ligne. <strong>Un site qui recrute des clients motivés automatiquement.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/sport-sante&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos résultats<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vendent.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites nutritionnistes</p><div class="footer-links"><span onclick="nav(&#39;/sport-sante&#39;)">← Sport</span></div></div></div></footer></div>
+
+<div id="page-sport-sante-yoga-pilates" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(168,85,247,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/sport-sante&#39;)">Sport</span><span class="sep">›</span><span class="current">Yoga &amp; Pilates</span></div><div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">🧘 Expert Yoga &amp; Pilates</div><h1 class="sp-h1">Votre communauté<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">grandit.</span><br>Votre studio aussi.</h1><p class="sp-sub">Planning cours, abonnements, ambiance zen, témoignages. <strong>Fidélisez et attirez des membres en continu.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon studio →</button><button class="btn-g" onclick="nav(&#39;/sport-sante&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>La sérénité<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">commence ici.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites yoga &amp; pilates</p><div class="footer-links"><span onclick="nav(&#39;/sport-sante&#39;)">← Sport</span></div></div></div></footer></div>
+
+<!-- ═══ COMMERCE LOCAL ═══ -->
+<div id="page-commerce-local" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(245,158,11,.07) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Commerce local</span></div>
+      <div class="badge" style="color:#F59E0B;background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3)">🛍 Spécialiste Commerce Local</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Votre boutique unique<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">visible partout.</span><br><span class="soft">Amazon ne gagne pas.</span></h1>
+      <p class="vh-sub">On crée des sites pour les commerçants indépendants qui veulent fidéliser leur clientèle locale et attirer de nouveaux clients au-delà du bouche-à-oreille.</p>
+      <div class="vh-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Réserver un appel →</button><button class="btn-g" onclick="nav(&#39;/commerce-local/fleuriste&#39;)">Voir Fleuriste</button></div>
+    </div>
+  </section>
+  <section class="subcat-sec"><div class="container">
+    <div class="sec-hd"><h2>Votre commerce<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">a une âme unique.</span></h2></div>
+    <div class="subcat-grid">
+      <div class="subcat-card" onclick="nav(&#39;/commerce-local/fleuriste&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0f1a05,#1a3505)">🌸</div><div class="sc-body"><div class="sc-title">Fleuriste</div><div class="sc-desc">Commandes en ligne, bouquets occasions spéciales, galerie créations, événementiel.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/commerce-local/caviste&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a1a,#3d1530)">🍷</div><div class="sc-body"><div class="sc-title">Caviste &amp; Épicerie fine</div><div class="sc-desc">Catalogue vins, événements dégustation, newsletter, clientèle premium.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/commerce-local/chocolatier&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a05,#3d1a05)">🍫</div><div class="sc-body"><div class="sc-title">Chocolatier &amp; Confiseur</div><div class="sc-desc">Boutique en ligne coffrets cadeaux, saisonnier (Noël, Pâques), commandes sur-mesure.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/commerce-local/librairie&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1020,#1a2540)">📚</div><div class="sc-body"><div class="sc-title">Librairie indépendante</div><div class="sc-desc">Agenda événements, sélections thématiques, commandes réservations, communauté lecteurs.</div><div class="sc-link">Voir la page →</div></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre histoire<br><span style="background:linear-gradient(135deg,#F59E0B,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">mérite</span><br><span class="soft">d'être racontée en ligne.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit →</button></div></div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites commerces locaux</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span></div></div></div></footer>
+</div>
+
+<div id="page-commerce-local-fleuriste" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(236,72,153,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/commerce-local&#39;)">Commerce</span><span class="sep">›</span><span class="current">Fleuriste</span></div><div class="sp-badge" style="color:#EC4899;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3)">🌸 Expert Fleuriste</div><h1 class="sp-h1">Vos créations florales<br><span style="background:linear-gradient(135deg,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">commandées en ligne.</span><br>Livrées avec amour.</h1><p class="sp-sub">Commandes en ligne, galerie créations, mariages, deuil, occasions. <strong>Votre boutique fleurit au-delà de votre rue.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/commerce-local&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos fleurs<br><span style="background:linear-gradient(135deg,#EC4899,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">voyagent plus loin.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites fleuristes</p><div class="footer-links"><span onclick="nav(&#39;/commerce-local&#39;)">← Commerce</span></div></div></div></footer></div>
+
+<div id="page-commerce-local-caviste" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(168,85,247,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/commerce-local&#39;)">Commerce</span><span class="sep">›</span><span class="current">Caviste</span></div><div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">🍷 Expert Caviste</div><h1 class="sp-h1">Votre expertise<br><span style="background:linear-gradient(135deg,#A855F7,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vinicole</span><br>attire les amateurs.</h1><p class="sp-sub">Catalogue vins, événements dégustation, newsletter. <strong>Les amateurs de bons vins vous trouvent et deviennent des clients fidèles.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/commerce-local&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Votre sélection<br><span style="background:linear-gradient(135deg,#A855F7,#D4A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent">mérite une vitrine.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites cavistes</p><div class="footer-links"><span onclick="nav(&#39;/commerce-local&#39;)">← Commerce</span></div></div></div></footer></div>
+
+<div id="page-commerce-local-chocolatier" class="page"><section class="subpage-hero"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/commerce-local&#39;)">Commerce</span><span class="sep">›</span><span class="current">Chocolatier</span></div><div class="sp-badge" style="color:#D97706;background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.3)">🍫 Expert Chocolatier</div><h1 class="sp-h1">Vos créations<br><span style="background:linear-gradient(135deg,#D97706,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">s'offrent en ligne.</span></h1><p class="sp-sub">Boutique coffrets cadeaux, commandes saisonnières, sur-mesure. <strong>Noël, Pâques, Saint-Valentin — votre site vend même quand vous êtes en cuisine.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer ma boutique →</button><button class="btn-g" onclick="nav(&#39;/commerce-local&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Vos chocolats<br><span style="background:linear-gradient(135deg,#D97706,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent">se vendent.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites chocolatiers</p><div class="footer-links"><span onclick="nav(&#39;/commerce-local&#39;)">← Commerce</span></div></div></div></footer></div>
+
+<div id="page-commerce-local-librairie" class="page"><section class="subpage-hero"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/commerce-local&#39;)">Commerce</span><span class="sep">›</span><span class="current">Librairie</span></div><div class="sp-badge" style="color:#22D3EE;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)">📚 Expert Librairie</div><h1 class="sp-h1">Votre librairie<br><span style="background:linear-gradient(135deg,#22D3EE,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">devient</span><br>un lieu de culture.</h1><p class="sp-sub">Agenda événements, sélections coups de cœur, commandes en ligne, communauté lecteurs. <strong>Votre librairie unique face aux géants.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/commerce-local&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Les livres ont<br><span style="background:linear-gradient(135deg,#22D3EE,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">besoin d'une adresse.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites librairies</p><div class="footer-links"><span onclick="nav(&#39;/commerce-local&#39;)">← Commerce</span></div></div></div></footer></div>
+
+<!-- ═══ HOTELLERIE ═══ -->
+<div id="page-hotellerie" class="page">
+  <section class="vh" style="background:radial-gradient(ellipse 60% 50% at 60% 40%, rgba(168,85,247,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span class="current">Hôtellerie</span></div>
+      <div class="badge" style="color:#A855F7;background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.3)">🏨 Spécialiste Hôtellerie</div>
+      <h1 class="vh" style="min-height:auto;padding:0;display:block">Booking prend 20%.<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Votre site</span><br>récupère tout.</h1>
+      <p class="vh-sub">On crée des sites de réservation directe pour les hôtels, gîtes et B&amp;B qui veulent réduire leur dépendance aux OTA et récupérer leurs marges.</p>
+      <div class="vh-ctas">
+        <button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Calculer mes économies →</button>
+        <button class="btn-g" onclick="nav(&#39;/hotellerie/hotel-independant&#39;)">Voir Hôtel indépendant</button>
+      </div>
+      <div class="vh-stats">
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+20%</div><div class="vs-lbl">Marge récupérée par nuit</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0%</div><div class="vs-lbl">Commission sur réservations directes</div></div>
+        <div><div class="vs-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+50%</div><div class="vs-lbl">Réservations directes</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="subcat-sec"><div class="container">
+    <div class="sec-hd"><h2>Votre type<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">d'établissement.</span></h2></div>
+    <div class="subcat-grid">
+      <div class="subcat-card" onclick="nav(&#39;/hotellerie/hotel-independant&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a0a2e,#1a1a5e)">🏨</div><div class="sc-body"><div class="sc-title">Hôtel indépendant</div><div class="sc-desc">Réservation directe, galerie chambres, offres exclusives site. Récupérez vos 20% de commission Booking.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/hotellerie/chambre-hotes&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#1a0a05,#3d2a10)">🛏️</div><div class="sc-body"><div class="sc-title">Chambre d'hôtes &amp; B&amp;B</div><div class="sc-desc">Ambiance, petit-déjeuner, expérience locale. Les voyageurs réservent directement chez vous.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/hotellerie/gite&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a)">🏡</div><div class="sc-body"><div class="sc-title">Gîte &amp; Location saisonnière</div><div class="sc-desc">Calendrier disponibilité, réservation directe, galerie. Airbnb ne touche plus rien.</div><div class="sc-link">Voir la page →</div></div></div>
+      <div class="subcat-card" onclick="nav(&#39;/hotellerie/camping&#39;)"><div class="sc-img" style="background:linear-gradient(135deg,#0a1a05,#102a0a)">⛺</div><div class="sc-body"><div class="sc-title">Camping &amp; Glamping</div><div class="sc-desc">Emplacements, activités, réservation en ligne, galerie nature. La saison remplie à l'avance.</div><div class="sc-link">Voir la page →</div></div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Combien Booking<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vous a coûté</span><br><span class="soft">cette année ?</span></h2>
+    <p>On vous calcule ça en 5 minutes. Et on vous montre combien vous récupériez avec un site de réservation directe.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Calculer mes économies</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites hôtellerie &amp; tourisme</p><div class="footer-links"><span onclick="nav(&#39;/&#39;)">Accueil</span><span onclick="nav(&#39;/hotellerie/hotel-independant&#39;)">Hôtel</span><span onclick="nav(&#39;/hotellerie/gite&#39;)">Gîte</span></div></div></div></footer>
+</div>
+
+<div id="page-hotellerie-hotel-independant" class="page">
+  <section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(168,85,247,.08) 0%, transparent 70%)">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/hotellerie&#39;)">Hôtellerie</span><span class="sep">›</span><span class="current">Hôtel indépendant</span></div>
+      <div class="sp-badge" style="color:#A855F7;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3)">🏨 Expert Hôtel Indépendant</div>
+      <h1 class="sp-h1">Chaque nuit vendue<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">directement</span><br>= 20% de plus pour vous.</h1>
+      <p class="sp-sub">Réservation directe intégrée, galerie premium, offres exclusives. <strong>Un voyageur qui réserve sur votre site plutôt que sur Booking, c'est 20% de marge récupérée instantanément.</strong></p>
+      <div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Calculer mes économies →</button><button class="btn-g" onclick="nav(&#39;/hotellerie&#39;)">← Retour</button></div>
+    </div>
+  </section>
+  <section class="feat-sec"><div class="container">
+    <div class="sec-hd"><h2>Ce qu'on crée pour<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">votre hôtel</span></h2></div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📅</div><h4>Réservation directe intégrée</h4><p>Module de réservation propre à votre hôtel. Vos clients réservent sans passer par Booking. Zéro commission.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📸</div><h4>Galerie chambres premium</h4><p>Chaque chambre présentée comme dans un magazine. Vos clients rêvent avant même de cliquer sur Réserver.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">💰</div><h4>Tarifs directs avantageux</h4><p>Proposez un tarif légèrement inférieur au prix Booking pour inciter à réserver directement. C'est légal et efficace.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">🌐</div><h4>Site multilingue</h4><p>Français, anglais, espagnol. Vos clients internationaux réservent directement sans passer par les OTA.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">🎁</div><h4>Offres exclusives site</h4><p>Petit-déjeuner offert, late check-out, accès spa — des avantages exclusifs pour les réservations directes uniquement.</p></div>
+      <div class="fcard"><div class="fcard-ico" style="background:rgba(168,85,247,.15)">📊</div><h4>Analytics réservations</h4><p>Suivez en temps réel vos réservations directes vs OTA. Regardez votre marge récupérée augmenter.</p></div>
+    </div>
+  </div></section>
+  <section class="results-sec"><div class="container">
+    <div class="sec-hd" style="margin-bottom:48px"><h2>Le <span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ROI concret</span></h2></div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+20%</div><div class="result-lbl">Marge par nuit directe</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0%</div><div class="result-lbl">Commission OTA</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">+50%</div><div class="result-lbl">Réservations directes</div></div>
+      <div class="result-card"><div class="result-num" style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ROI</div><div class="result-lbl">Dès le premier mois</div></div>
+    </div>
+  </div></section>
+  <section class="cta-fin"><div class="cta-orb"></div><div class="container">
+    <h2>Votre hôtel mérite<br><span style="background:linear-gradient(135deg,#A855F7,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">de garder</span><br><span class="soft">ses marges.</span></h2>
+    <p>Calculons ensemble combien Booking vous a coûté cette année. Et combien vous pourriez récupérer avec un site de réservation directe.</p>
+    <div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Calculer mes économies gratuitement</button></div>
+  </div></section>
+  <footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites hôtels indépendants</p><div class="footer-links"><span onclick="nav(&#39;/hotellerie&#39;)">← Hôtellerie</span><span onclick="nav(&#39;/hotellerie/gite&#39;)">Gîte</span></div></div></div></footer>
+</div>
+
+<div id="page-hotellerie-chambre-hotes" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(212,168,83,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/hotellerie&#39;)">Hôtellerie</span><span class="sep">›</span><span class="current">Chambre d'hôtes</span></div><div class="sp-badge" style="color:#D4A853;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.3)">🛏️ Expert B&amp;B</div><h1 class="sp-h1">Votre maison<br><span style="background:linear-gradient(135deg,#D4A853,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">raconte</span><br>une histoire unique.</h1><p class="sp-sub">Ambiance, petit-déjeuner maison, expérience locale. <strong>Les voyageurs qui cherchent l'authenticité vous trouvent et réservent directement.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/hotellerie&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>L'authenticité<br><span style="background:linear-gradient(135deg,#D4A853,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">se mérite.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites chambres d'hôtes</p><div class="footer-links"><span onclick="nav(&#39;/hotellerie&#39;)">← Hôtellerie</span></div></div></div></footer></div>
+
+<div id="page-hotellerie-gite" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(34,197,94,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/hotellerie&#39;)">Hôtellerie</span><span class="sep">›</span><span class="current">Gîte &amp; Location</span></div><div class="sp-badge" style="color:#22C55E;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3)">🏡 Expert Gîte</div><h1 class="sp-h1">Airbnb prend 15%.<br><span style="background:linear-gradient(135deg,#22C55E,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Votre site</span><br>garde tout.</h1><p class="sp-sub">Calendrier disponibilité, réservation directe, galerie premium. <strong>Vos vacanciers réservent sans passer par Airbnb. Vous gardez 100% de la nuit.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Calculer mes économies →</button><button class="btn-g" onclick="nav(&#39;/hotellerie&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>Airbnb ne mérite pas<br><span style="background:linear-gradient(135deg,#22C55E,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">vos 15%.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Calculer mes économies</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites gîtes &amp; locations</p><div class="footer-links"><span onclick="nav(&#39;/hotellerie&#39;)">← Hôtellerie</span></div></div></div></footer></div>
+
+<div id="page-hotellerie-camping" class="page"><section class="subpage-hero" style="background:radial-gradient(ellipse 60% 60% at 60% 40%, rgba(132,204,22,.07) 0%,transparent 70%)"><div class="container" style="position:relative;z-index:1"><div class="breadcrumb"><span onclick="nav(&#39;/&#39;)">Accueil</span><span class="sep">›</span><span onclick="nav(&#39;/hotellerie&#39;)">Hôtellerie</span><span class="sep">›</span><span class="current">Camping &amp; Glamping</span></div><div class="sp-badge" style="color:#84CC16;background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.3)">⛺ Expert Camping</div><h1 class="sp-h1">Votre saison<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">complète</span><br>dès avril.</h1><p class="sp-sub">Emplacements, activités, réservation en ligne, galerie nature. <strong>Remplissez votre camping avant même que la saison commence.</strong></p><div class="hero-ctas"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">Créer mon site →</button><button class="btn-g" onclick="nav(&#39;/hotellerie&#39;)">← Retour</button></div></div></section><section class="cta-fin"><div class="cta-orb"></div><div class="container"><h2>La nature<br><span style="background:linear-gradient(135deg,#84CC16,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">se réserve d'avance.</span></h2><div class="cta-btns"><button class="btn-p" onclick="nav(&#39;/#contact&#39;)">📞 Appel gratuit</button></div></div></section><footer><div class="container"><div class="footer-inner"><p>© 2025 WEBcraft · Sites campings &amp; glamping</p><div class="footer-links"><span onclick="nav(&#39;/hotellerie&#39;)">← Hôtellerie</span></div></div></div></footer></div>
+
+<!-- ═══ JS ROUTER ═══ -->
+<script>
+const ROUTES = {
+  '/': 'home',
+  '/restauration': 'restauration',
+  '/restauration/pizzeria': 'restauration-pizzeria',
+  '/restauration/kebab': 'restauration-kebab',
+  '/restauration/gastronomique': 'restauration-gastronomique',
+  '/restauration/coffee-shop': 'restauration-coffee-shop',
+  '/restauration/boulangerie': 'restauration-boulangerie',
+  '/beaute': 'beaute',
+  '/beaute/salon-coiffure': 'beaute-salon-coiffure',
+  '/beaute/institut': 'beaute-institut',
+  '/beaute/nail-art': 'beaute-nail-art',
+  '/beaute/spa': 'beaute-spa',
+  '/beaute/tatoueur': 'beaute-tatoueur',
+  '/artisans': 'artisans',
+  '/artisans/electricien-plombier': 'artisans-electricien-plombier',
+  '/artisans/peintre': 'artisans-peintre',
+  '/artisans/macon': 'artisans-macon',
+  '/artisans/menuisier': 'artisans-menuisier',
+  '/artisans/paysagiste': 'artisans-paysagiste',
+  '/sport-sante': 'sport-sante',
+  '/sport-sante/coach-sportif': 'sport-sante-coach-sportif',
+  '/sport-sante/salle-sport': 'sport-sante-salle-sport',
+  '/sport-sante/kine-osteo': 'sport-sante-kine-osteo',
+  '/sport-sante/nutritionniste': 'sport-sante-nutritionniste',
+  '/sport-sante/yoga-pilates': 'sport-sante-yoga-pilates',
+  '/commerce-local': 'commerce-local',
+  '/commerce-local/fleuriste': 'commerce-local-fleuriste',
+  '/commerce-local/caviste': 'commerce-local-caviste',
+  '/commerce-local/chocolatier': 'commerce-local-chocolatier',
+  '/commerce-local/librairie': 'commerce-local-librairie',
+  '/hotellerie': 'hotellerie',
+  '/hotellerie/hotel-independant': 'hotellerie-hotel-independant',
+  '/hotellerie/chambre-hotes': 'hotellerie-chambre-hotes',
+  '/hotellerie/gite': 'hotellerie-gite',
+  '/hotellerie/camping': 'hotellerie-camping',
+};
+
+function nav(path) {
+  // handle anchor links on home
+  const [p, hash] = path.split('#');
+  const route = p || '/';
+  const pageId = ROUTES[route] || 'home';
+
+  // hide all pages
+  document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active'));
+  // show target
+  const target = document.getElementById('page-' + pageId);
+  if (target) target.classList.add('active');
+
+  // scroll
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (hash) {
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 350);
+  }
+
+  // update URL (for bookmarking)
+  history.pushState({ page: pageId }, '', route === '/' ? '/' : route);
+
+  // update nav title
+  updateTitle(pageId);
+}
+
+function updateTitle(pageId) {
+  const titles = {
+    'home': 'WEBcraft — Agence Web',
+    'restauration': 'Sites Restauration — WEBcraft',
+    'restauration-pizzeria': 'Site Pizzeria — WEBcraft',
+    'restauration-kebab': 'Site Kebab — WEBcraft',
+    'restauration-gastronomique': 'Site Restaurant Gastronomique — WEBcraft',
+    'restauration-coffee-shop': 'Site Coffee Shop — WEBcraft',
+    'restauration-boulangerie': 'Site Boulangerie — WEBcraft',
+    'beaute': 'Sites Beauté — WEBcraft',
+    'beaute-salon-coiffure': 'Site Salon Coiffure — WEBcraft',
+    'beaute-institut': 'Site Institut Beauté — WEBcraft',
+    'beaute-nail-art': 'Site Nail Art — WEBcraft',
+    'beaute-spa': 'Site Spa — WEBcraft',
+    'beaute-tatoueur': 'Site Tatoueur — WEBcraft',
+    'artisans': 'Sites Artisans — WEBcraft',
+    'artisans-electricien-plombier': 'Site Électricien Plombier — WEBcraft',
+    'artisans-peintre': 'Site Peintre — WEBcraft',
+    'artisans-macon': 'Site Maçon — WEBcraft',
+    'artisans-menuisier': 'Site Menuisier — WEBcraft',
+    'artisans-paysagiste': 'Site Paysagiste — WEBcraft',
+    'sport-sante': 'Sites Sport & Santé — WEBcraft',
+    'sport-sante-coach-sportif': 'Site Coach Sportif — WEBcraft',
+    'sport-sante-salle-sport': 'Site Salle Sport — WEBcraft',
+    'sport-sante-kine-osteo': 'Site Kiné Ostéo — WEBcraft',
+    'sport-sante-nutritionniste': 'Site Nutritionniste — WEBcraft',
+    'sport-sante-yoga-pilates': 'Site Yoga Pilates — WEBcraft',
+    'commerce-local': 'Sites Commerce Local — WEBcraft',
+    'commerce-local-fleuriste': 'Site Fleuriste — WEBcraft',
+    'commerce-local-caviste': 'Site Caviste — WEBcraft',
+    'commerce-local-chocolatier': 'Site Chocolatier — WEBcraft',
+    'commerce-local-librairie': 'Site Librairie — WEBcraft',
+    'hotellerie': 'Sites Hôtellerie — WEBcraft',
+    'hotellerie-hotel-independant': 'Site Hôtel Indépendant — WEBcraft',
+    'hotellerie-chambre-hotes': 'Site Chambre d\'Hôtes — WEBcraft',
+    'hotellerie-gite': 'Site Gîte — WEBcraft',
+    'hotellerie-camping': 'Site Camping — WEBcraft',
+  };
+  document.title = titles[pageId] || 'WEBcraft — Agence Web';
+}
+
+// Handle browser back/forward
+window.addEventListener('popstate', (e) => {
+  const path = window.location.pathname;
+  const pageId = ROUTES[path] || 'home';
+  document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active'));
+  const target = document.getElementById('page-' + pageId);
+  if (target) target.classList.add('active');
+});
+
+// FAQ toggle
+function tF(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  // close all FAQs in current active page only
+  const activePage = document.querySelector('.page.active');
+  if (activePage) activePage.querySelectorAll('.fi').forEach(x => x.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.06 });
+
+// Observe all fade-up elements (re-run on page change)
+function observeAll() {
+  document.querySelectorAll('.fu, .fade-up').forEach(el => obs.observe(el));
+}
+observeAll();
+
+// Init on load
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  if (path && path !== '/') {
+    const pageId = ROUTES[path];
+    if (pageId) {
+      document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) target.classList.add('active');
+    }
+  }
+});
+</script>
+
+
+</body></html>
